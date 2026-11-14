@@ -128,10 +128,93 @@
 .iv-nudge{font-size:12px;color:#7b7d98;margin-top:8px}
 @media(max-width:800px){.iv-row{grid-template-columns:22px 31px repeat(3,minmax(0,1fr));}.iv-meaning{grid-column:3/-1;border-top:1px dashed #e3e5f1;padding-top:6px}.iv-word{font-size:14px}}
 @media(max-width:560px){.iv-feature{padding:17px}.iv-row{grid-template-columns:22px 29px repeat(3,minmax(0,1fr));gap:5px;padding:10px 8px}.iv-word{font-size:13px}.iv-form-main{gap:2px}.iv-form .ipa{font-size:10px}.iv-form .speaker{width:25px;min-width:25px;height:25px;font-size:12px}.iv-form-label{font-size:10px}.iv-no{font-size:11px}.iv-meaning{font-size:12px}.iv-header .btn{width:100%}}
+
+/* Compact home only — keeps learning, games, tests, and verb pages unchanged */
+.home-compact .hero{padding:28px 32px;border-radius:22px;box-shadow:0 10px 28px #07075216}
+.home-compact .hero:before{font-size:190px;top:-45px;right:13%;opacity:.8}
+.home-compact .hero-grid{grid-template-columns:minmax(0,1fr) minmax(385px,44%);gap:23px}
+.home-eyebrow{display:inline-block;font-weight:900;font-size:11px;letter-spacing:.11em;color:#ffc197}
+.home-compact .hero h1{font-size:clamp(31px,3.4vw,43px);line-height:1.14;margin:8px 0 9px;letter-spacing:-.045em}
+.home-compact .hero p{font-size:14px;line-height:1.5;color:#dde1fb;margin:0}
+.home-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;position:relative}
+.home-overview>div{background:#ffffff15;border:1px solid #ffffff22;border-radius:12px;padding:14px 7px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;text-align:center}
+.home-overview b{font-size:clamp(21px,2.35vw,30px);color:#ff964f;line-height:1.2;font-weight:950;font-variant-numeric:tabular-nums}
+.home-overview small{font-size:11px;color:#f1f1ff;margin-top:4px;line-height:1.22}
+.home-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0 18px}
+.home-shortcut{min-width:0;min-height:102px;display:flex;gap:14px;align-items:center;border:1px solid #ffcbac;background:linear-gradient(115deg,#fff8f1,#fffcf8);border-radius:16px;padding:16px 20px;text-align:left;transition:box-shadow .15s,transform .15s,border-color .15s}
+.home-shortcut:hover,.home-shortcut:focus-visible{border-color:#ff914e;box-shadow:0 8px 22px #f96f1322;transform:translateY(-2px)}
+.home-shortcut-verbs{background:linear-gradient(115deg,#f1f2ff,#fbfaff);border-color:#d8dcff}
+.home-shortcut-verbs:hover,.home-shortcut-verbs:focus-visible{border-color:#8c91df;box-shadow:0 8px 22px #11116c15}
+.home-shortcut-icon{width:48px;height:48px;display:grid;place-items:center;flex:0 0 48px;background:white;border:1px solid #f4e1d4;border-radius:13px;font-size:24px}
+.home-shortcut-verbs .home-shortcut-icon{border-color:#dbe0ff}
+.home-shortcut-copy{display:flex;flex-direction:column;min-width:0;gap:3px;flex:1}
+.home-shortcut-copy strong{color:var(--navy);font-size:17px;font-weight:900;line-height:1.28;letter-spacing:-.025em}
+.home-shortcut-copy em{font-style:normal;color:var(--orange)}
+.home-shortcut-copy small{color:#777c95;font-size:12px;line-height:1.36}
+.home-shortcut-arrow{font-size:26px;color:var(--orange);font-weight:900;line-height:1}
+.home-shortcut-verbs .home-shortcut-arrow{color:var(--navy)}
+.home-unit-section .section-head{margin:12px 0 12px;align-items:center}
+.home-unit-section .section-head h2{font-size:23px;margin:0 0 2px}
+.home-unit-section .section-head p{font-size:12px}
+.home-unit-count{font-size:12px;white-space:nowrap;font-weight:800;color:var(--navy);background:#eceeff;border-radius:999px;padding:6px 11px}
+.home-compact .units{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.home-compact .unit{min-height:94px;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:11px;padding:15px 12px;border-radius:15px;box-shadow:0 2px 8px #10144b07;background:#fff;text-align:left}
+.home-compact .unit.available{border-color:#e7e8f1}
+.home-compact .unit.available:hover{border-color:#ffb478}
+.home-unit-no{font-size:28px;color:var(--orange);font-weight:950;letter-spacing:-.06em;line-height:1;min-width:38px}
+.home-unit-info{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.home-unit-info strong{font-weight:850;font-size:13px;color:var(--navy);line-height:1.35}
+.home-unit-info small{font-size:12px;font-weight:550;color:#626983;line-height:1.35;overflow-wrap:anywhere}
+.home-unit-arrow{color:#c2c5d8;font-size:20px;align-self:center;font-weight:700}
+@media(max-width:950px){.home-compact .hero-grid{grid-template-columns:1fr;gap:18px}.home-overview{max-width:670px}.home-compact .units{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:660px){
+.home-compact .hero{padding:21px 17px;border-radius:17px}
+.home-compact .hero-grid{gap:15px}
+.home-compact .hero h1{font-size:clamp(28px,8vw,36px);margin:4px 0 7px}
+.home-eyebrow{font-size:9px}
+.home-compact .hero p{font-size:12px}
+.home-overview{gap:5px}
+.home-overview>div{padding:9px 4px;border-radius:9px}
+.home-overview b{font-size:20px}
+.home-overview small{font-size:9px}
+.home-shortcuts{grid-template-columns:1fr;gap:9px;margin:11px 0 17px}
+.home-shortcut{min-height:79px;padding:11px 13px;gap:10px;border-radius:14px}
+.home-shortcut-icon{width:42px;height:42px;flex-basis:42px;font-size:21px}
+.home-shortcut-copy strong{font-size:15px}
+.home-shortcut-copy small{font-size:11px}
+.home-unit-section .section-head{margin:7px 0 10px}
+.home-unit-section .section-head h2{font-size:20px}
+.home-unit-section .section-head p{font-size:11px}
+.home-unit-count{font-size:10px;padding:5px 7px}
+.home-compact .units{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.home-compact .unit{min-height:77px;padding:10px 8px;gap:7px;border-radius:12px}
+.home-unit-no{font-size:23px;min-width:31px}
+.home-unit-info strong{font-size:12px}
+.home-unit-info small{font-size:11px}
+.home-unit-arrow{display:none}
+}
+@media(max-width:360px){.home-overview b{font-size:18px}.home-unit-info small{font-size:10px}.home-shortcut-copy strong{font-size:14px}}
+
+
+.nav-mobile{display:none}
+@media(max-width:660px){
+  .nav-desktop{display:none}
+  .nav-mobile{display:inline}
+  .navrow{gap:7px;min-height:57px}
+  .brand{gap:6px;font-size:11px;letter-spacing:0}
+  .brandmark{width:34px;height:34px;font-size:18px;border-radius:11px}
+  .brandtext small{display:none}
+  .nav-actions{gap:4px}
+  .nav-actions .btn{white-space:nowrap;min-height:34px;font-size:11px;padding:7px 8px}
+  #homeBtn{min-width:34px;padding:5px;font-size:19px}
+  #irregularBtn{font-size:10px;padding:7px 7px}
+  #semesterBtn{font-size:11px;padding:7px 8px}
+  #soundBtn{width:34px;height:34px;min-width:34px;font-size:14px;padding:6px}
+}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="wrap navrow"><div class="brand"><div class="brandmark">H</div><div class="brandtext">HENRY ENGLISH<small>LEARN • PLAY • REMEMBER</small></div></div><div class="nav-actions"><button id="homeBtn" class="btn outline small" type="button">⌂ Trang chủ</button><button id="irregularBtn" class="btn ghost small" type="button">🔤 120 Verbs</button><button id="semesterBtn" class="btn orange small" type="button">📘 Ôn tập HK1</button><button id="soundBtn" class="btn ghost icon-only" type="button" aria-label="Bật tắt âm thanh" title="Bật / tắt hiệu ứng âm thanh">🔊</button></div></div></header>
+<header class="topbar"><div class="wrap navrow"><div class="brand"><div class="brandmark">H</div><div class="brandtext">HENRY ENGLISH<small>LEARN • PLAY • REMEMBER</small></div></div><div class="nav-actions"><button id="homeBtn" class="btn outline small" type="button" aria-label="Trang chủ"><span class="nav-desktop">⌂ Trang chủ</span><span class="nav-mobile">⌂</span></button><button id="irregularBtn" class="btn ghost small" type="button" aria-label="120 động từ bất quy tắc"><span class="nav-desktop">🔤 120 Verbs</span><span class="nav-mobile">120 Verbs</span></button><button id="semesterBtn" class="btn orange small" type="button" aria-label="Ôn tập học kỳ 1"><span class="nav-desktop">📘 Ôn tập HK1</span><span class="nav-mobile">HK1</span></button><button id="soundBtn" class="btn ghost icon-only" type="button" aria-label="Bật tắt âm thanh" title="Bật / tắt hiệu ứng âm thanh">🔊</button></div></div></header>
 <main class="wrap container" id="app" aria-live="polite"></main>
 <div class="wrap"><footer class="footer"><span>© HENRY ENGLISH · Tiếng Anh lớp 9</span><span>Website được thiết kế bởi Henry English · Học mọi lúc trên điện thoại và máy tính</span></footer></div>
 <script>
@@ -585,7 +668,52 @@ function speak(text,repeats=1){cancelSpeech();let token=speechSerial;speakingNow
 function topHome(){state.page='home';state.search='';cancelSpeech();render();scrollUp()}
 function scrollUp(){window.scrollTo({top:0,behavior:'instant'})}
 function baseHeader(){if(state.category==='irregular'&&(state.page==='learn'||state.page==='game'))return `<div class="crumb"><button data-action="home">Trang chủ</button><span class="sep">›</span><button data-action="learn">120 Irregular Verbs</button>${state.page==='game'?`<span class="sep">›</span><span>${gameName(state.game)}</span>`:''}</div>`;return `<div class="crumb"><button data-action="home">Trang chủ</button><span class="sep">›</span><button data-action="unit">Unit ${state.unit}</button>${state.page==='learn'||state.page==='game'?`<span class="sep">›</span><button data-action="learn">${({vocab:'Core Vocabulary',phrasal:'Phrasal Verbs',word:'Word Forms'})[state.category]}</button>`:''}${state.page==='game'?`<span class="sep">›</span><span>${gameName(state.game)}</span>`:''}</div>`}
-function renderHome(){const live=Array.from({length:12},(_,i)=>UNIT_DATA[i+1]);return `<section class="hero"><div class="hero-grid"><div><span class="chip">● HỆ THỐNG HỌC TỪ VỰNG THÔNG MINH</span><h1>TIẾNG ANH <span>LỚP 9</span></h1><p>12 Unit theo chủ đề. Đã hoàn thiện Unit 1–12: từ vựng, phrasal verbs, word forms, IPA Anh–Anh, câu ví dụ và 4 trò chơi tương tác. Unit 6–12 đã được lọc trùng xuyên suốt các Unit trước.</p><button class="btn orange" data-action="select-unit" data-unit="12">Học Unit 12 – Career Choices →</button></div><div class="hero-panel"><small>UNIT ĐÃ SẴN SÀNG</small><div class="giant">12<span style="font-size:22px;color:white"> / 12</span></div><small>UNIT 1–12 · TỪ VỰNG VÀ GAME ĐÃ SẴN SÀNG</small><div class="hero-counts"><span><b>${live.reduce((n,x)=>n+x.vocab.length,0)}</b>Từ vựng</span><span><b>${live.reduce((n,x)=>n+x.phrasal.length,0)}</b>Phrasal verbs</span><span><b>${live.reduce((n,x)=>n+x.word.length,0)}</b>Word forms</span></div></div></div></section><div class="sem-feature"><div><span class="chip">📘 HỌC KỲ 1 · UNIT 1–6</span><h2>Ôn tập thi học kỳ 1 – 15 đề</h2><p>69 câu/đề · Phát âm, trọng âm, từ vựng, ngữ pháp, đọc hiểu và viết · Chấm điểm và giải thích từng câu sau khi nộp bài.</p></div><button type="button" class="btn orange" data-action="sem-catalog">Vào ôn tập học kỳ 1 →</button></div><section class="iv-feature"><div><span class="chip">🔤 IRREGULAR VERBS · GRADE 9</span><h2>120 động từ bất quy tắc · V1 – V2 – V3</h2><p>IPA Anh–Anh cho từng dạng, nghĩa tiếng Việt, nút nghe phát âm và chọn từ để luyện với 4 trò chơi.</p></div><button class="btn orange" data-action="open-irregular">Học 120 động từ →</button></section><div class="section-head"><div><span class="chip navy">CHƯƠNG TRÌNH 12 UNIT</span><h2>Chọn bài học</h2><p>Unit 1–12 đã có đầy đủ dữ liệu từ vựng và các trò chơi. Không lặp mục từ đã học ở Unit trước.</p></div></div><div class="units">${Array.from({length:12},(_,i)=>{const n=i+1,unit=UNIT_DATA[n];return `<button class="unit ${unit?'available':'unavailable'}" ${unit?`data-action="select-unit" data-unit="${n}"`:'disabled aria-disabled="true"'}><div><div class="number">${String(n).padStart(2,'0')}</div><div style="margin-top:7px;font-weight:850">UNIT ${n}</div></div><div class="unit-foot"><span>${unit?esc(unit.name):'Chưa có dữ liệu'}</span><span class="status ${unit?'ready':''}">${unit?'Sẵn sàng':'Sắp có'}</span></div></button>`}).join('')}</div>`}
+function renderHome(){
+  const live=Array.from({length:12},(_,i)=>UNIT_DATA[i+1]);
+  const vocabCount=live.reduce((n,x)=>n+x.vocab.length,0);
+  const phraseCount=live.reduce((n,x)=>n+x.phrasal.length,0);
+  const formCount=live.reduce((n,x)=>n+x.word.length,0);
+  return `<div class="home-compact">
+    <section class="hero" aria-label="Tổng quan Tiếng Anh lớp 9">
+      <div class="hero-grid">
+        <div class="home-title-wrap">
+          <span class="home-eyebrow">HENRY ENGLISH · GRADE 9</span>
+          <h1>TIẾNG ANH <span>LỚP 9</span></h1>
+          <p>12 Unit · Từ vựng, IPA Anh–Anh và 4 trò chơi tương tác</p>
+        </div>
+        <div class="home-overview" aria-label="Thống kê tài liệu đã sẵn sàng">
+          <div><b>12</b><small>Unit</small></div>
+          <div><b>${vocabCount}</b><small>Từ vựng</small></div>
+          <div><b>${phraseCount}</b><small>Phrasal verbs</small></div>
+          <div><b>${formCount}</b><small>Word forms</small></div>
+        </div>
+      </div>
+    </section>
+    <div class="home-shortcuts">
+      <button type="button" class="home-shortcut" data-action="sem-catalog" aria-label="Mở 15 đề ôn tập học kỳ 1">
+        <span class="home-shortcut-icon">📘</span>
+        <span class="home-shortcut-copy"><strong>Ôn tập học kỳ 1 <em>· 15 đề</em></strong><small>69 câu/đề · Chấm điểm và giải thích</small></span>
+        <span class="home-shortcut-arrow" aria-hidden="true">→</span>
+      </button>
+      <button type="button" class="home-shortcut home-shortcut-verbs" data-action="open-irregular" aria-label="Mở 120 động từ bất quy tắc">
+        <span class="home-shortcut-icon">🔤</span>
+        <span class="home-shortcut-copy"><strong>120 động từ bất quy tắc</strong><small>V1 – V2 – V3 · IPA · 4 game luyện tập</small></span>
+        <span class="home-shortcut-arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+    <section class="home-unit-section" aria-label="Danh sách 12 Unit">
+      <div class="section-head"><div><h2>Chọn Unit để học</h2><p>Đã sẵn sàng đầy đủ 12 Unit</p></div><span class="home-unit-count">12 / 12 Unit</span></div>
+      <div class="units">${Array.from({length:12},(_,i)=>{
+        const n=i+1,unit=UNIT_DATA[n];
+        return `<button type="button" class="unit ${unit?'available':'unavailable'}" ${unit?`data-action="select-unit" data-unit="${n}"`:'disabled aria-disabled="true"'}>
+          <span class="home-unit-no">${String(n).padStart(2,'0')}</span>
+          <span class="home-unit-info"><strong>Unit ${n}</strong><small>${unit?esc(unit.name):'Chưa có dữ liệu'}</small></span>
+          <span class="home-unit-arrow" aria-hidden="true">→</span>
+        </button>`
+      }).join('')}</div>
+    </section>
+  </div>`;
+}
 function renderUnit(){const u=bank(),n=String(state.unit).padStart(2,'0'),g=UNIT_GRAMMAR[state.unit];return `${baseHeader()}<div><span class="chip">UNIT ${n} / 12 · HENRY ENGLISH</span><h1 class="page-title">${esc(u.name)}</h1><p class="page-subtitle">${esc(u.vn)} · 3 học phần từ vựng${g?' + ngữ pháp':''} · ${u.vocab.length+u.phrasal.length+u.word.length} mục · IPA Anh–Anh (UK)</p>${state.unit===4?`<div class="note">🔎 <b>Đã lọc trùng với Unit 1–3:</b> 37 từ/cụm từ mới, 9 phrasal verbs mới và 12 họ từ (39 dạng từ mới).</div>`:state.unit===5?`<div class="note">🔎 <b>Unit 5 đã lọc trùng Unit 1–4:</b> ${u.vocab.length} Core Vocabulary, ${u.phrasal.length} phrasal verbs và ${u.families.length} họ từ (${u.word.length} dạng từ).</div>`:state.unit>=6?`<div class="note">🔎 <b>Unit ${state.unit} đã lọc trùng Unit 1–${state.unit-1}:</b> ${u.vocab.length} từ/cụm từ mới, ${u.phrasal.length} phrasal verbs mới, ${u.families.length} họ từ (${u.word.length} dạng từ mới). Từ đã học không xuất hiện lại như một mục mới; phần ngữ pháp được giữ từ tài liệu gốc.</div>`:''}</div><div class="topic-grid ${g?'with-grammar':''}"><button class="topic" data-action="open-category" data-category="vocab"><span class="topic-icon">📚</span><span class="chip">PART 1 · CORE VOCABULARY</span><h2>01 · Từ vựng</h2><p>Từ theo chủ đề, IPA (UK), từ loại, nghĩa tiếng Việt và ví dụ song ngữ.</p><div class="topic-end"><span>${u.vocab.length} từ/cụm từ</span><b>Vào học →</b></div></button><button class="topic blue" data-action="open-category" data-category="phrasal"><span class="topic-icon">🔗</span><span class="chip navy">PART 2 · PHRASAL VERBS</span><h2>02 · Phrasal Verbs</h2><p>Cụm động từ có IPA, nghĩa, cấu trúc và ví dụ.</p><div class="topic-end"><span>${u.phrasal.length} cụm động từ</span><b>Vào học →</b></div></button><button class="topic blue word-topic" data-action="open-category" data-category="word"><span class="topic-icon">🔤</span><span class="chip navy">PART 3 · WORD FORMS</span><h2>03 · Word Forms</h2><p>Các họ Verb – Noun – Adjective – Adverb. Mỗi dạng có IPA, nghĩa và ví dụ.</p><div class="topic-end"><span>${u.word.length} dạng từ · ${u.families.length} họ từ</span><b>Vào học →</b></div></button>${g?`<button class="topic grammar-topic" data-action="open-grammar"><span class="topic-icon">✍️</span><span class="chip">PART 4 · GRAMMAR</span><h2>04 · Ngữ pháp</h2><p>Lý thuyết, cấu trúc và bài tập ngữ pháp trọng tâm Unit ${state.unit} từ tài liệu đã gửi.</p><div class="topic-end"><span>Ngữ pháp Unit ${state.unit}</span><b>Vào học →</b></div></button>`:''}</div><div class="note" style="margin-top:23px"><b>Cách học:</b> Chọn học phần → tích những từ muốn luyện → Flashcard, Ghép từ, Trắc nghiệm hoặc Chữ bay. Chữ bay tính điểm theo một lần chọn: đúng +10, sai 0 rồi chuyển câu.</div>`}
 function renderGrammar(){const u=bank();return `${baseHeader()}<div class="learning-top"><div><span class="chip">UNIT ${state.unit} · PART 4</span><h1 class="page-title">Ngữ pháp · ${esc(u.name)}</h1><p class="page-subtitle">Lý thuyết, cấu trúc và ví dụ theo tài liệu Unit ${state.unit}</p></div>${btn('← Chọn học phần','unit')}</div><article class="grammar-lesson card">${UNIT_GRAMMAR[state.unit]||'<p>Chưa có dữ liệu ngữ pháp.</p>'}</article>`}
 function renderLearn(){if(state.category==='irregular')return renderIrregularLearn();const u=bank(),t={vocab:['Core Vocabulary',`${u.vocab.length} từ/cụm từ · IPA (UK), từ loại, nghĩa và câu ví dụ`],phrasal:['Phrasal Verbs',`${u.phrasal.length} cụm động từ · IPA (UK), nghĩa, cấu trúc và ví dụ`],word:['Word Forms',`${u.families.length} họ từ · ${u.word.length} dạng từ · IPA cho từng dạng`] }[state.category];return `${baseHeader()}<div class="learning-top"><div><span class="chip">UNIT ${String(state.unit).padStart(2,'0')} · ${u.name.toUpperCase()}</span><h1 class="page-title">${t[0]}</h1><p class="page-subtitle">${t[1]}</p></div>${btn('← Chọn học phần','unit')}</div><div class="tabrow"><button class="tab ${state.tab==='bank'?'active':''}" data-action="tab" data-tab="bank">📚 Học từ vựng</button><button class="tab ${state.tab==='games'?'active':''}" data-action="tab" data-tab="games">🎮 Luyện tập qua game</button></div>${state.tab==='bank'?renderBank():renderGamesMenu()}`}
