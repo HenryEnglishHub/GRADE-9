@@ -211,6 +211,265 @@
   #semesterBtn{font-size:11px;padding:7px 8px}
   #soundBtn{width:34px;height:34px;min-width:34px;font-size:14px;padding:6px}
 }
+
+/* 15 Nov 2026: compact one-viewport Unit / vocabulary learning layouts.
+   Body does not scroll on these screens; only the vocabulary list is scrollable. */
+body[data-page="unit"],body[data-page="learn"]:not([data-category="irregular"]){height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+body[data-page="unit"]>.wrap:has(>.footer),body[data-page="learn"]:not([data-category="irregular"])>.wrap:has(>.footer){display:none}
+body[data-page="unit"] .container,body[data-page="learn"]:not([data-category="irregular"]) .container{width:min(1560px,calc(100% - 40px));flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:12px 0 10px}
+body[data-page="unit"] #app,body[data-page="learn"]:not([data-category="irregular"]) #app{height:100%;min-height:0;display:flex;flex-direction:column}
+body[data-page="unit"] .crumb,body[data-page="learn"]:not([data-category="irregular"]) .crumb{margin:0 0 8px;gap:5px;font-size:12px;flex-shrink:0}
+body[data-page="unit"] #app>.crumb button,body[data-page="learn"]:not([data-category="irregular"]) #app>.crumb button{padding:2px 5px}
+body[data-page="unit"] .page-title,body[data-page="learn"]:not([data-category="irregular"]) .page-title{font-size:clamp(26px,3vw,35px);line-height:1.13;margin:4px 0}
+body[data-page="unit"] .page-subtitle,body[data-page="learn"]:not([data-category="irregular"]) .page-subtitle{font-size:13px;line-height:1.4}
+body[data-page="unit"] .chip,body[data-page="learn"]:not([data-category="irregular"]) .chip{padding:4px 9px;font-size:10px}
+body[data-page="unit"] #app>div:not(.topic-grid):not(.note):not(.crumb){flex-shrink:0}
+body[data-page="unit"] #app>div>.note{margin:6px 0 0;padding:6px 10px;font-size:11px;line-height:1.25}
+body[data-page="unit"] #app>.topic-grid{flex:0 1 auto;height:220px;min-height:0;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:12px;margin-top:11px}
+body[data-page="unit"] #app>.topic-grid.with-grammar{grid-template-columns:repeat(4,minmax(0,1fr))}
+body[data-page="unit"] .topic.word-topic{grid-column:auto}
+body[data-page="unit"] .topic{min-width:0;min-height:0;padding:16px 18px;gap:8px;border-radius:18px;box-shadow:none}
+body[data-page="unit"] .topic-icon{width:43px;height:43px;font-size:22px;border-radius:12px}
+body[data-page="unit"] .topic h2{font-size:clamp(17px,1.5vw,22px);line-height:1.2}
+body[data-page="unit"] .topic p{font-size:12px;line-height:1.4}
+body[data-page="unit"] .topic-end{font-size:13px;gap:8px}
+body[data-page="unit"] .topic-end span{font-size:12px}
+body[data-page="unit"] #app>.note{flex:0 0 auto;margin:8px 0 0;padding:6px 10px;font-size:11px;line-height:1.3;border-radius:9px}
+body[data-page="learn"]:not([data-category="irregular"]) .learning-top{flex:0 0 auto;align-items:center;flex-wrap:nowrap}
+.learning-right{display:flex;flex:0 0 auto;gap:10px;align-items:center;justify-content:flex-end}
+.uk-voice{max-width:270px;display:inline-block;font-size:11px;font-weight:800;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#e7f7ee;color:#13693d;padding:7px 10px;border-radius:99px}
+.uk-voice.uncertain{background:#fff0d9;color:#935313}
+body[data-page="learn"]:not([data-category="irregular"]) .learning-top .btn{min-height:34px;padding:7px 11px;font-size:12px}
+body[data-page="learn"]:not([data-category="irregular"]) .tabrow{flex:0 0 auto;margin:11px 0 9px;gap:7px}
+body[data-page="learn"]:not([data-category="irregular"]) .tab{padding:8px 13px;font-size:13px;border-radius:10px}
+body[data-page="learn"]:not([data-category="irregular"]) .toolbar{flex:0 0 auto;padding:8px 10px;margin:0 0 8px;gap:7px;border-radius:12px;flex-wrap:nowrap}
+body[data-page="learn"]:not([data-category="irregular"]) .search{min-width:0;padding:9px 11px;font-size:13px}
+body[data-page="learn"]:not([data-category="irregular"]) .toolbar .btn{min-height:35px;white-space:nowrap;padding:7px 10px;font-size:12px}
+body[data-page="learn"]:not([data-category="irregular"]) .toolbar .count{white-space:nowrap;font-size:12px;padding:8px 10px}
+.bank-scroller,.games-scroller{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-gutter:stable;overscroll-behavior:contain;padding:2px 4px 6px 1px}
+.bank-scroller .banks{gap:6px}
+.bank-scroller .term{min-height:58px;border-radius:12px;padding:8px 12px;gap:10px;grid-template-columns:20px minmax(150px,1.05fr) minmax(145px,1fr) minmax(200px,1.28fr) 37px;box-shadow:none}
+.bank-scroller .term .term-word{font-size:16px;line-height:1.2}
+.bank-scroller .term>div:nth-child(2){display:flex;align-items:baseline;flex-wrap:wrap;column-gap:8px;row-gap:2px}
+.bank-scroller .term .ipa{font-size:12px}
+.bank-scroller .wordtype{display:inline-flex;align-items:center;margin:0;padding:1px 5px;font-size:10px}
+.bank-scroller .term .meaning{font-size:13px;font-weight:650;line-height:1.35}
+.bank-scroller .term .example{font-size:12px;line-height:1.35}
+.bank-scroller .term .speaker{min-width:33px;height:33px;font-size:16px}
+.bank-scroller .bank-subhead{display:flex;align-items:center;gap:10px;font-size:15px;margin:8px 0 0;padding:3px 4px;line-height:1.3}
+.bank-scroller .bank-subhead small{font-size:11px}
+.bank-bottom{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:7px 11px;margin-top:7px;color:#666b86;font-size:12px}
+.bank-bottom b{color:var(--navy)}
+.bank-bottom .btn{min-height:34px;padding:7px 12px;font-size:12px}
+.games-scroller .selection-banner{margin:2px 0 12px;padding:11px 13px;font-size:13px}
+.games-scroller .mode-grid{gap:10px;margin-bottom:12px}
+.games-scroller .mode{min-height:144px;padding:14px 17px;border-radius:15px;gap:6px}
+.games-scroller .mode .emoji{font-size:25px}
+.games-scroller .mode h3{font-size:17px}
+.games-scroller .mode p{font-size:12px}
+.games-scroller .note{margin:9px 0;padding:9px 11px;font-size:12px}
+@media(max-width:850px){
+ body[data-page="unit"] #app>.topic-grid,body[data-page="unit"] #app>.topic-grid.with-grammar{height:360px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:8px}
+ body[data-page="learn"]:not([data-category="irregular"]) .toolbar{flex-wrap:wrap}
+ body[data-page="learn"]:not([data-category="irregular"]) .search{flex-basis:100%}
+ .bank-scroller .term{grid-template-columns:20px minmax(140px,1fr) minmax(140px,.8fr) 36px;gap:8px}
+ .bank-scroller .term .example{grid-column:2/4;grid-row:2}
+ .bank-scroller .term .speaker{grid-column:4;grid-row:1/3}
+ .bank-bottom{font-size:11px}
+ .uk-voice{max-width:175px}
+}
+@media(max-width:660px){
+ body[data-page="unit"] .container,body[data-page="learn"]:not([data-category="irregular"]) .container{width:calc(100% - 20px);padding:7px 0 7px}
+ body[data-page="unit"] .crumb,body[data-page="learn"]:not([data-category="irregular"]) .crumb{margin-bottom:5px;font-size:11px}
+ body[data-page="unit"] .page-title,body[data-page="learn"]:not([data-category="irregular"]) .page-title{font-size:26px}
+ body[data-page="unit"] .page-subtitle,body[data-page="learn"]:not([data-category="irregular"]) .page-subtitle{font-size:11px}
+ body[data-page="unit"] #app>div>.note{display:none}
+ body[data-page="unit"] #app>.topic-grid,body[data-page="unit"] #app>.topic-grid.with-grammar{height:min(450px,calc(100dvh - 210px));grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:7px;margin-top:9px}
+ body[data-page="unit"] #app>.topic-grid.with-grammar{grid-template-rows:repeat(4,minmax(0,1fr))}
+ body[data-page="unit"] .topic{display:grid;grid-template-columns:38px minmax(0,1fr) auto;grid-template-rows:auto auto;gap:3px 9px;align-content:center;padding:9px 11px;border-radius:12px}
+ body[data-page="unit"] .topic-icon{grid-column:1;grid-row:1/3;width:38px;height:38px;font-size:20px;border-radius:10px;align-self:center}
+ body[data-page="unit"] .topic>.chip{display:none}
+ body[data-page="unit"] .topic h2{grid-column:2;grid-row:1;font-size:17px}
+ body[data-page="unit"] .topic p{grid-column:2;grid-row:2;font-size:11px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ body[data-page="unit"] .topic-end{grid-column:3;grid-row:1/3;align-self:center;margin:0;font-size:11px}
+ body[data-page="unit"] .topic-end span{display:none}
+ body[data-page="unit"] #app>.note{font-size:10px;padding:6px 8px;margin-top:7px;line-height:1.25}
+ body[data-page="learn"]:not([data-category="irregular"]) .learning-top{gap:5px}
+ body[data-page="learn"]:not([data-category="irregular"]) .learning-top .page-subtitle{display:none}
+ body[data-page="learn"]:not([data-category="irregular"]) .learning-top .chip{font-size:9px}
+ body[data-page="learn"]:not([data-category="irregular"]) .learning-top .btn{font-size:11px;white-space:nowrap;min-height:31px;padding:5px 7px}
+ .learning-right{flex-direction:column;align-items:flex-end;gap:4px}
+ .uk-voice{max-width:143px;padding:4px 7px;font-size:9px}
+ body[data-page="learn"]:not([data-category="irregular"]) .tabrow{margin:8px 0;gap:5px;flex-wrap:nowrap}
+ body[data-page="learn"]:not([data-category="irregular"]) .tab{flex:1;min-width:0;padding:7px 4px;font-size:11px;white-space:nowrap}
+ body[data-page="learn"]:not([data-category="irregular"]) .toolbar{gap:5px;padding:6px;margin-bottom:6px}
+ body[data-page="learn"]:not([data-category="irregular"]) .search{min-width:0;flex-basis:100%;padding:8px 9px;font-size:12px}
+ body[data-page="learn"]:not([data-category="irregular"]) .toolbar .btn{flex:1;min-width:0;padding:6px 5px;font-size:11px;min-height:32px}
+ body[data-page="learn"]:not([data-category="irregular"]) .toolbar .count{flex:1;text-align:center;font-size:11px;padding:7px 3px}
+ .bank-scroller .term{grid-template-columns:19px minmax(0,1fr) 34px;grid-template-rows:auto auto auto;column-gap:7px;row-gap:1px;padding:8px 9px;min-height:0}
+ .bank-scroller .term>div:nth-child(2){grid-column:2;grid-row:1;column-gap:6px}
+ .bank-scroller .term .term-word{font-size:15px}
+ .bank-scroller .term .ipa{font-size:11px}
+ .bank-scroller .term .meaning{grid-column:2;grid-row:2;font-size:12px}
+ .bank-scroller .term .example{grid-column:2/4;grid-row:3;font-size:11px;line-height:1.25}
+ .bank-scroller .term .speaker{grid-column:3;grid-row:1/3;min-width:32px;height:32px}
+ .bank-scroller .bank-subhead{font-size:14px;gap:8px;margin:7px 0 2px}
+ .bank-bottom{margin-top:5px;padding:5px 7px;font-size:10px}
+ .bank-bottom .btn{padding:7px 7px;font-size:10px;max-width:55%;min-height:34px}
+ .games-scroller .mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .games-scroller .mode{min-height:133px;padding:11px}
+ .games-scroller .mode .emoji{font-size:21px}
+ .games-scroller .mode h3{font-size:15px}
+ .games-scroller .mode p{font-size:11px}
+}
+@media(max-height:620px){body[data-page="unit"] #app>.note{display:none}body[data-page="unit"] .topic p{font-size:10px}body[data-page="unit"] .topic{padding:7px 10px}body[data-page="learn"]:not([data-category="irregular"]) .learning-top .page-subtitle{display:none}}
+
+
+/* 16 Nov: dense vocabulary view. Navigation and exercises stay untouched. */
+body[data-page="learn"]:not([data-category="irregular"]) #app>.crumb{display:none}
+body[data-page="learn"]:not([data-category="irregular"]) .container{width:calc(100% - 28px);max-width:none;padding:6px 0}
+body[data-page="learn"]:not([data-category="irregular"]) .navrow{min-height:59px}
+body[data-page="learn"]:not([data-category="irregular"]) .brandmark{width:36px;height:36px;font-size:18px}
+body[data-page="learn"]:not([data-category="irregular"]) .learning-compact-head{display:flex;align-items:center;justify-content:space-between;flex:0 0 auto;min-height:35px;gap:9px;padding:1px 3px 5px;border-bottom:1px solid var(--line)}
+.learning-identity{display:flex;align-items:center;gap:9px;flex-wrap:wrap;min-width:0;font-size:13px;color:#5c6380}
+.learning-identity b{white-space:nowrap;color:var(--orange);font-size:14px}
+.learning-identity .learn-unit-name{font-weight:800;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:420px}
+.learning-identity .learn-section{border-left:1px solid #cfd3e0;padding-left:9px;font-weight:800;color:var(--navy)}
+.learning-identity .learn-total{font-size:11px;color:#777d94;white-space:nowrap}
+body[data-page="learn"]:not([data-category="irregular"]) .learning-right{gap:6px}
+body[data-page="learn"]:not([data-category="irregular"]) .learning-compact-head .btn{min-height:30px;padding:5px 9px;font-size:12px;white-space:nowrap}
+body[data-page="learn"]:not([data-category="irregular"]) .uk-voice{max-width:none;border-radius:8px;font-size:11px;padding:5px 7px;white-space:nowrap}
+body[data-page="learn"]:not([data-category="irregular"]) .tabrow{margin:6px 0;gap:6px}
+body[data-page="learn"]:not([data-category="irregular"]) .tab{padding:6px 13px;font-size:12px;min-height:33px}
+body[data-page="learn"]:not([data-category="irregular"]) .toolbar{padding:5px 7px;margin-bottom:5px;gap:5px;border-radius:10px;flex-wrap:nowrap}
+body[data-page="learn"]:not([data-category="irregular"]) .search{padding:6px 9px;min-height:32px;font-size:13px;background:white}
+body[data-page="learn"]:not([data-category="irregular"]) .toolbar .btn{min-height:32px;padding:6px 9px;font-size:11px;border-radius:8px;white-space:nowrap}
+body[data-page="learn"]:not([data-category="irregular"]) .toolbar .count{font-size:11px;padding:7px 9px;white-space:nowrap}
+body[data-page="learn"]:not([data-category="irregular"]) .toolbar .example-toggle.active{background:var(--navy);color:white;border-color:var(--navy)}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller{padding:1px 2px 4px;scrollbar-gutter:stable}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .banks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 8px;align-content:start}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .bank-subhead{grid-column:1/-1;margin:4px 0 0;padding:2px 5px;font-size:12px;font-weight:850;border-bottom:1px solid #e6e8f0;line-height:1.25}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .bank-subhead small{font-size:10px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term{display:grid;grid-template-columns:17px minmax(0,1.18fr) minmax(0,.85fr) 30px;grid-template-rows:auto;align-items:center;column-gap:6px;row-gap:2px;min-height:44px;padding:5px 7px;border-radius:9px;box-shadow:none}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .tick{grid-column:1;grid-row:1;width:16px;height:16px;margin:0}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term>div:nth-child(2){grid-column:2;grid-row:1;display:flex;gap:3px 6px;align-items:baseline;flex-wrap:wrap;min-width:0;line-height:1.25}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .term-word{font-size:14px;line-height:1.2}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .ipa{font-size:11px;line-height:1.15}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .wordtype{font-size:9px;padding:1px 4px;margin:0}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .meaning{grid-column:3;grid-row:1;font-size:12px;line-height:1.2}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .speaker{grid-column:4;grid-row:1;min-width:29px;width:29px;height:29px;font-size:14px;border-radius:8px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .example{display:none;grid-column:2/4;grid-row:2;color:#69718c;font-size:11px;line-height:1.3;padding-top:2px;overflow-wrap:anywhere}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller.show-examples .term .example{display:block}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .example .form-example{font-size:10.5px;line-height:1.3;margin:1px 0 0}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-bottom{margin-top:5px;padding:5px 7px;border-radius:10px;font-size:11px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-bottom .btn{padding:6px 10px;min-height:32px;font-size:11px}
+/* Word family blocks are not `.term`; keep intact in the scroll region. */
+@media(max-width:1050px){
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .banks{grid-template-columns:1fr}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term{grid-template-columns:18px minmax(0,1.2fr) minmax(0,.9fr) 30px}
+}
+@media(max-width:660px){
+ body[data-page="learn"]:not([data-category="irregular"]) .container{width:calc(100% - 12px);padding:4px 0 5px}
+ body[data-page="learn"]:not([data-category="irregular"]) .learning-compact-head{min-height:30px;padding-bottom:3px}
+ .learning-identity{gap:4px;font-size:10px;flex-wrap:nowrap}
+ .learning-identity b{font-size:11px}
+ .learning-identity .learn-unit-name{max-width:115px;font-size:10px}
+ .learning-identity .learn-section{padding-left:5px;font-size:10px}
+ .learning-identity .learn-total{display:none}
+ body[data-page="learn"]:not([data-category="irregular"]) .learning-compact-head .btn{font-size:10px;min-height:29px;padding:5px 6px}
+ body[data-page="learn"]:not([data-category="irregular"]) .uk-voice{display:none}
+ body[data-page="learn"]:not([data-category="irregular"]) .tabrow{margin:4px 0;gap:4px}
+ body[data-page="learn"]:not([data-category="irregular"]) .tab{font-size:11px;min-height:28px;padding:4px 8px}
+ body[data-page="learn"]:not([data-category="irregular"]) .toolbar{padding:4px;gap:4px;margin-bottom:4px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(28px,auto)}
+ body[data-page="learn"]:not([data-category="irregular"]) .search{grid-column:1/-1;min-height:30px;min-width:0;font-size:12px;padding:5px 7px;width:100%}
+ body[data-page="learn"]:not([data-category="irregular"]) .toolbar .btn{font-size:10px;padding:4px 2px;min-height:28px;width:100%;min-width:0;white-space:nowrap}
+ body[data-page="learn"]:not([data-category="irregular"]) .toolbar .count{font-size:10px;padding:5px 1px;text-align:center;white-space:nowrap}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .banks{gap:3px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term{grid-template-columns:17px minmax(0,1fr) 28px;grid-template-rows:auto auto;column-gap:5px;row-gap:0;min-height:49px;padding:4px 6px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .tick{grid-row:1/3}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term>div:nth-child(2){grid-column:2;grid-row:1;column-gap:5px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .term-word{font-size:13px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .ipa{font-size:10px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .meaning{grid-column:2;grid-row:2;font-size:11px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .speaker{grid-column:3;grid-row:1/3;min-width:27px;width:27px;height:27px;font-size:13px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .example{grid-column:2/4;grid-row:3;font-size:11px;padding-top:4px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-bottom{font-size:10px;padding:4px 5px;margin-top:4px;min-height:34px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-bottom .btn{max-width:65%;font-size:10px;padding:5px 7px;min-height:28px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .bank-subhead{font-size:11px;margin-top:3px;padding:2px 3px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .bank-subhead small{font-size:9px}
+}
+
+/* Minimal reading layout: all three banks scroll with the page instead of a nested fixed-height frame. */
+body[data-page="learn"]:not([data-category="irregular"]),body[data-page="unit"]{height:auto!important;min-height:100vh!important;display:block!important;overflow-x:hidden!important;overflow-y:auto!important}
+body[data-page="learn"]:not([data-category="irregular"]) #app,body[data-page="unit"] #app{display:block!important;height:auto!important;min-height:0!important;overflow:visible!important}
+body[data-page="learn"]:not([data-category="irregular"]) .container,body[data-page="unit"] .container{height:auto!important;min-height:0!important;max-height:none!important;display:block!important;overflow:visible!important;flex:none!important;padding:7px 0 15px!important}
+body[data-page="learn"]:not([data-category="irregular"]) .topbar{position:relative}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller,body[data-page="learn"]:not([data-category="irregular"]) .games-scroller{height:auto!important;max-height:none!important;min-height:0!important;overflow:visible!important;display:block!important;flex:none!important;overscroll-behavior:auto!important;padding:0!important;scrollbar-gutter:auto!important}
+body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar{padding:4px 6px;margin-bottom:5px;display:flex;align-items:center;flex-wrap:nowrap;gap:5px;box-shadow:none}
+body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .search{min-width:125px;flex:1;padding:7px 9px;border-radius:7px}
+body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .btn{padding:6px 9px;min-height:32px;border-radius:8px;font-size:11px}
+body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .count{padding:6px 8px;min-width:51px;text-align:center}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .banks{gap:5px 9px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term{min-height:40px;padding:5px 8px;border:1px solid #e5e8ef;border-radius:9px;box-shadow:none;column-gap:7px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .term-name{grid-column:2;grid-row:1;display:flex;gap:3px 6px;align-items:baseline;flex-wrap:wrap;line-height:1.18;min-width:0}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .term-word{font-weight:900;font-size:14px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .meaning{min-width:0;font-size:12px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .example .term-structure{display:block;font-weight:750;color:#c65b11}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .example>span{display:block}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .example{font-size:11px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .bank-subhead{margin:5px 0 1px;min-height:18px;padding:1px 4px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .bank-subhead small{display:inline!important;font-size:10px;margin-left:3px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .note{display:none;margin:5px 0;padding:7px 9px;font-size:11px}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller.show-examples .note{display:block}
+body[data-page="learn"]:not([data-category="irregular"]) .bank-bottom{display:none!important}
+/* Word Forms: no empty verb/noun/adjective/adverb panels; cards carry only real entries. */
+body[data-page="learn"][data-category="word"] .wf-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;align-items:stretch}
+body[data-page="learn"][data-category="word"] .wf-family{padding:9px 12px;border-radius:12px;box-shadow:none;min-width:0}
+body[data-page="learn"][data-category="word"] .wf-head{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:6px;min-height:22px}
+body[data-page="learn"][data-category="word"] .wf-root{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px;min-width:0;font-size:12px;color:#70778c;line-height:1.2}
+body[data-page="learn"][data-category="word"] .wf-root strong{font-size:15px;font-weight:900;color:var(--navy)}
+body[data-page="learn"][data-category="word"] .wf-group-btn{border:1px solid #dfe4f0;border-radius:7px;background:#f8f9fd;white-space:nowrap;color:#282d69;padding:3px 7px;font-size:10px;font-weight:750;cursor:pointer}
+body[data-page="learn"][data-category="word"] .wf-forms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 9px;align-content:start}
+body[data-page="learn"][data-category="word"] .wf-posgroup{border-top:1px solid #edf0f5;padding-top:3px;min-width:0}
+body[data-page="learn"][data-category="word"] .wf-pos-label{display:block;font-size:9px;font-weight:850;color:#888ea4;letter-spacing:.025em;margin-bottom:1px;white-space:nowrap}
+body[data-page="learn"][data-category="word"] .wf-entry{display:grid;grid-template-columns:15px minmax(0,1fr) 26px;align-items:center;gap:4px;min-height:29px;padding:2px 0}
+body[data-page="learn"][data-category="word"] .wf-entry+.wf-entry{border-top:1px dashed #edf0f5}
+body[data-page="learn"][data-category="word"] .wf-entry .tick{width:15px;height:15px;margin:0}
+body[data-page="learn"][data-category="word"] .wf-lexeme{display:flex;flex-wrap:wrap;gap:2px 5px;align-items:baseline;min-width:0;line-height:1.15}
+body[data-page="learn"][data-category="word"] .wf-lexeme strong{font-size:12px;color:var(--navy);font-weight:850;overflow-wrap:anywhere}
+body[data-page="learn"][data-category="word"] .wf-lexeme .ipa{font-size:10px}
+body[data-page="learn"][data-category="word"] .wf-vi{display:block;flex-basis:100%;color:#555d73;font-size:10px;overflow-wrap:anywhere}
+body[data-page="learn"][data-category="word"] .wf-entry .speaker{width:25px;height:25px;min-width:25px;font-size:12px;border-radius:7px}
+body[data-page="learn"][data-category="word"] .wf-examples{display:none;flex-basis:100%;font-size:10px;color:#71788e;line-height:1.2;margin:3px 0}
+body[data-page="learn"][data-category="word"] .wf-examples span{display:block}
+body[data-page="learn"][data-category="word"] .wf-details{display:none;border-top:1px dashed #e7eaf2;font-size:11px;color:#626980;margin-top:5px;padding-top:5px}
+body[data-page="learn"][data-category="word"] .wf-details .wf-warning{color:#a65a15}
+body[data-page="learn"][data-category="word"] .show-examples .wf-examples{display:block}
+body[data-page="learn"][data-category="word"] .show-examples .wf-details{display:block}
+@media(max-width:1050px){body[data-page="learn"][data-category="word"] .wf-list{grid-template-columns:1fr}body[data-page="learn"][data-category="word"] .wf-forms{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:660px){
+ body[data-page="learn"]:not([data-category="irregular"]) .container{width:calc(100% - 12px)!important;padding-top:3px!important}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;padding:3px}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .search{grid-column:1/-1;min-width:0;width:100%;min-height:28px;padding:4px 7px}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .btn{min-height:27px;padding:4px 3px;font-size:10px;white-space:nowrap}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .example-toggle{grid-column:span 2}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar [data-action="select-all"]{grid-column:span 2}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar [data-action="select-none"]{grid-column:span 2}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .count{grid-column:span 2;padding:6px 3px}
+ body[data-page="learn"]:not([data-category="irregular"]) .learn-toolbar .learn-play{grid-column:span 4}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term{min-height:43px;padding:5px 6px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .term-word{font-size:13px}
+ body[data-page="learn"]:not([data-category="irregular"]) .bank-scroller .term .meaning{font-size:11px}
+ body[data-page="learn"][data-category="word"] .wf-list{gap:5px;grid-template-columns:1fr}
+ body[data-page="learn"][data-category="word"] .wf-family{padding:7px 9px}
+ body[data-page="learn"][data-category="word"] .wf-forms{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 7px}
+ body[data-page="learn"][data-category="word"] .wf-root strong{font-size:14px}
+ body[data-page="learn"][data-category="word"] .wf-lexeme strong{font-size:12px}
+}
+
+/* Use available width intelligently: 2–4 populated word-form groups per family, never empty placeholder panels. */
+body[data-page="learn"][data-category="word"] .wf-forms{grid-template-columns:repeat(auto-fit,minmax(175px,1fr))}
+@media(max-width:660px){body[data-page="learn"][data-category="word"] .wf-forms{grid-template-columns:repeat(auto-fit,minmax(148px,1fr))}}
 </style>
 </head>
 <body>
@@ -330,13 +589,13 @@ const WORDS=[];let nextId=0;for(const fam of FAMILIES){fam.ids=[];for(const pos 
 // Unit 2 – City Life. Dữ liệu mới không lặp các mục từ riêng biệt đã có ở Unit 1.
 const VOCABULARY_2_RAW=[
  ['city life','/ˈsɪti laɪf/','n','cuộc sống thành thị','City life offers many opportunities.','City Life & Urban Environment'],
- ['bustling','/ˈbʌslɪŋ/','adj','nhộn nhịp, náo nhiệt','Ho Chi Minh City is a bustling city.','City Life & Urban Environment'],
- ['concrete jungle','/ˌkɒŋkriːt ˈdʒʌŋɡl/','n','rừng bê tông','People need parks in the concrete jungle.','City Life & Urban Environment'],
+ ['bustling','/ˈbʌs.lɪŋ/','adj','nhộn nhịp, náo nhiệt','Ho Chi Minh City is a bustling city.','City Life & Urban Environment'],
+ ['concrete jungle','/ˌkɒŋ.kriːt ˈdʒʌŋ.ɡəl/','n','rừng bê tông','People need parks in the concrete jungle.','City Life & Urban Environment'],
  ['downtown','/ˌdaʊnˈtaʊn/','n/adj/adv','khu trung tâm thành phố; thuộc/ở trung tâm','My school is close to downtown.','City Life & Urban Environment'],
- ['liveable','/ˈlɪvəbl/','adj','đáng sống','Many people want to live in a liveable city.','City Life & Urban Environment'],
- ['pricey','/ˈpraɪsi/','adj','đắt đỏ','Shops downtown are often pricey.','City Life & Urban Environment'],
+ ['liveable','/ˈlɪv.ə.bəl/','adj','đáng sống','Many people want to live in a liveable city.','City Life & Urban Environment'],
+ ['pricey','/ˈpraɪ.si/','adj','đắt đỏ','Shops downtown are often pricey.','City Life & Urban Environment'],
  ['packed','/pækt/','adj','đông nghịt, chật kín','The bus is packed with passengers.','City Life & Urban Environment'],
- ['public amenities','/ˈpʌblɪk əˈmiːnətiz/','n (plural)','các tiện ích công cộng','This district has good public amenities.','City Life & Urban Environment'],
+ ['public amenities','/ˈpʌb.lɪk əˈmiː.nə.tiz/','n (plural)','các tiện ích công cộng','This district has good public amenities.','City Life & Urban Environment'],
  ['hygiene','/ˈhaɪdʒiːn/','n','vệ sinh','We should improve public hygiene.','City Life & Urban Environment'],
  ['leftover','/ˈleftəʊvə/','n/adj','thức ăn thừa; còn thừa','We put leftover food in the fridge.','City Life & Urban Environment'],
  ['green space','/ɡriːn speɪs/','n','không gian xanh','The city needs more green spaces.','City Life & Urban Environment'],
@@ -360,7 +619,7 @@ const VOCABULARY_2_RAW=[
  ['itchy','/ˈɪtʃi/','adj','ngứa, gây ngứa','The dust makes my eyes itchy.','Urban Problems'],
  ['car exhaust','/kɑːr ɪɡˈzɔːst/','n','khí thải ô tô','Car exhaust makes the air dirtier.','Urban Problems'],
  ['food waste','/fuːd weɪst/','n','rác thải thực phẩm','We should reduce food waste at home.','Urban Problems'],
- ['process','/ˈprəʊses/','v','xử lý','The factory can process food waste.','Urban Problems']
+ ['process','/ˈprəʊ.ses/','v','xử lý','The factory can process food waste.','Urban Problems']
 ];
 const VOCABULARY_2=VOCABULARY_2_RAW.map((r,i)=>({id:'u2v'+i,word:r[0],ipa:r[1],pos:r[2],vi:r[3],example:r[4],group:r[5]}));
 // carry out, cut down on đã học ở Unit 1, nên không lặp ở Unit 2.
@@ -652,7 +911,7 @@ const buildSelections=(unit)=>{
 };
 const irregularSaved=(()=>{try{const arr=JSON.parse(localStorage.getItem('henry_g9_irregular_selections_v1')||'null');return Array.isArray(arr)?arr:null}catch(e){return null}})();
 const irregularDefault=new Set((irregularSaved===null?IRREGULAR_VERBS.slice(0,20).map(x=>x.id):irregularSaved).filter(id=>IRREGULAR_BY_ID.has(id)));
-const state={page:'home',unit:1,category:'vocab',tab:'bank',search:'',game:'',sound:true,selected:Object.fromEntries(Object.keys(UNIT_DATA).map(n=>[Number(n),buildSelections(Number(n))])),flash:null,match:null,quiz:null,flying:null,irregularSelected:irregularDefault};
+const state={page:'home',unit:1,category:'vocab',tab:'bank',showBankExamples:false,search:'',game:'',sound:true,selected:Object.fromEntries(Object.keys(UNIT_DATA).map(n=>[Number(n),buildSelections(Number(n))])),flash:null,match:null,quiz:null,flying:null,irregularSelected:irregularDefault};
 function selected(){return state.category==='irregular'?state.irregularSelected:state.selected[state.unit][state.category]}
 function save(){if(state.category==='irregular'){try{localStorage.setItem('henry_g9_irregular_selections_v1',JSON.stringify([...state.irregularSelected]))}catch(e){};return}try{localStorage.setItem('henry_g9_2026_selections_v2',JSON.stringify(Object.fromEntries(Object.keys(UNIT_DATA).map(n=>[n,Object.fromEntries(['vocab','phrasal','word'].map(c=>[c,[...state.selected[n][c]]]))]))))}catch(e){}}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -662,8 +921,37 @@ const btn=(title,action,cls='outline')=>`<button type="button" class="btn ${cls}
 const current=()=>state.category==='irregular'?IRREGULAR_VERBS:bank()[state.category];const chosen=()=>current().filter(x=>selected().has(x.id));
 let audioCtx;function tickSound(type='click'){if(!state.sound)return;try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();let o=audioCtx.createOscillator(),g=audioCtx.createGain(),t=audioCtx.currentTime;o.type='sine';o.frequency.setValueAtTime(type==='good'?760:type==='bad'?220:520,t);if(type==='good')o.frequency.exponentialRampToValueAtTime(1050,t+.09);g.gain.setValueAtTime(.045,t);g.gain.exponentialRampToValueAtTime(.001,t+.12);o.connect(g);g.connect(audioCtx.destination);o.start(t);o.stop(t+.12)}catch(e){}}
 let speechSerial=0;const synth=('speechSynthesis'in window)?window.speechSynthesis:null;let speakingNow='';
+/* Chỉ ưu tiên giọng có locale Anh–Anh thật (en-GB); không gán giọng en-US.
+   Web Speech TTS phụ thuộc giọng được cài trên máy, nên hiển thị trạng thái trung thực. */
+function britishVoice(){
+ if(!synth)return null;
+ let voices=[];try{voices=synth.getVoices()||[]}catch(e){}
+ const uk=voices.filter(v=>/^en[-_]GB$/i.test(String(v.lang||'')));
+ const rate=v=>/google uk english|microsoft (sonia|libby|ryan|george|hazel)|daniel|serena|kate|oliver/i.test(v.name||'')?0:1;
+ return uk.sort((a,b)=>rate(a)-rate(b))[0]||null;
+}
+function ukVoiceInfo(){
+ const v=britishVoice();
+ return v?`<span class="uk-voice ready" id="ukVoiceIndicator" title="Đã phát hiện giọng British English: ${esc(v.name)}">🇬🇧 UK</span>`:
+ `<span class="uk-voice uncertain" id="ukVoiceIndicator" title="Không phát hiện giọng en-GB; thiết bị có thể đọc bằng giọng khác. Hãy cài giọng English (United Kingdom) trong Windows / hệ điều hành.">⚠ UK?</span>`;
+}
+function updateUKVoiceInfo(){
+ const indicator=document.getElementById('ukVoiceIndicator');if(!indicator)return;
+ const v=britishVoice();indicator.className='uk-voice '+(v?'ready':'uncertain');
+ indicator.textContent=v?'🇬🇧 UK':'⚠ UK?';
+ indicator.title=v?'Giọng Anh–Anh đã chọn: '+v.name:'Chưa tìm thấy giọng en-GB. Cài English (United Kingdom) trên thiết bị để đảm bảo phát âm British.';
+}
+if(synth){if(typeof synth.addEventListener==='function')synth.addEventListener('voiceschanged',updateUKVoiceInfo);else synth.onvoiceschanged=updateUKVoiceInfo;
+ try{synth.getVoices()}catch(e){}
+}
 function cancelSpeech(){speechSerial++;if(synth){try{synth.cancel()}catch(e){}}}
-function utter(text){if(!synth)return Promise.resolve();return new Promise(resolve=>{let u=new SpeechSynthesisUtterance(text);u.lang='en-GB';u.rate=.83;u.pitch=1;let voices=synth.getVoices();let voice=voices.find(x=>/^en-GB$/i.test(x.lang))||voices.find(x=>x.lang.toLowerCase().startsWith('en-gb'));if(voice)u.voice=voice;let finished=false;let fallback=setTimeout(done,Math.min(8000,Math.max(2800,500*text.length)));function done(){if(finished)return;finished=true;clearTimeout(fallback);resolve()}u.onend=done;u.onerror=done;try{synth.speak(u)}catch(e){done()}})}
+function utter(text){if(!synth)return Promise.resolve();return new Promise(resolve=>{
+ let u=new SpeechSynthesisUtterance(text);u.lang='en-GB';u.rate=.86;u.pitch=1;
+ const voice=britishVoice();if(voice)u.voice=voice;updateUKVoiceInfo();
+ let finished=false;let fallback=setTimeout(done,Math.min(12000,Math.max(3000,230*text.length)));
+ function done(){if(finished)return;finished=true;clearTimeout(fallback);resolve()}
+ u.onend=done;u.onerror=done;try{synth.speak(u)}catch(e){done()}
+})}
 function speak(text,repeats=1){cancelSpeech();let token=speechSerial;speakingNow=text;async function run(){for(let i=0;i<repeats;i++){if(token!==speechSerial)break;await utter(text);if(token!==speechSerial)break;if(i<repeats-1)await new Promise(r=>setTimeout(r,220))}}run()}
 function topHome(){state.page='home';state.search='';cancelSpeech();render();scrollUp()}
 function scrollUp(){window.scrollTo({top:0,behavior:'instant'})}
@@ -716,8 +1004,11 @@ function renderHome(){
 }
 function renderUnit(){const u=bank(),n=String(state.unit).padStart(2,'0'),g=UNIT_GRAMMAR[state.unit];return `${baseHeader()}<div><span class="chip">UNIT ${n} / 12 · HENRY ENGLISH</span><h1 class="page-title">${esc(u.name)}</h1><p class="page-subtitle">${esc(u.vn)} · 3 học phần từ vựng${g?' + ngữ pháp':''} · ${u.vocab.length+u.phrasal.length+u.word.length} mục · IPA Anh–Anh (UK)</p>${state.unit===4?`<div class="note">🔎 <b>Đã lọc trùng với Unit 1–3:</b> 37 từ/cụm từ mới, 9 phrasal verbs mới và 12 họ từ (39 dạng từ mới).</div>`:state.unit===5?`<div class="note">🔎 <b>Unit 5 đã lọc trùng Unit 1–4:</b> ${u.vocab.length} Core Vocabulary, ${u.phrasal.length} phrasal verbs và ${u.families.length} họ từ (${u.word.length} dạng từ).</div>`:state.unit>=6?`<div class="note">🔎 <b>Unit ${state.unit} đã lọc trùng Unit 1–${state.unit-1}:</b> ${u.vocab.length} từ/cụm từ mới, ${u.phrasal.length} phrasal verbs mới, ${u.families.length} họ từ (${u.word.length} dạng từ mới). Từ đã học không xuất hiện lại như một mục mới; phần ngữ pháp được giữ từ tài liệu gốc.</div>`:''}</div><div class="topic-grid ${g?'with-grammar':''}"><button class="topic" data-action="open-category" data-category="vocab"><span class="topic-icon">📚</span><span class="chip">PART 1 · CORE VOCABULARY</span><h2>01 · Từ vựng</h2><p>Từ theo chủ đề, IPA (UK), từ loại, nghĩa tiếng Việt và ví dụ song ngữ.</p><div class="topic-end"><span>${u.vocab.length} từ/cụm từ</span><b>Vào học →</b></div></button><button class="topic blue" data-action="open-category" data-category="phrasal"><span class="topic-icon">🔗</span><span class="chip navy">PART 2 · PHRASAL VERBS</span><h2>02 · Phrasal Verbs</h2><p>Cụm động từ có IPA, nghĩa, cấu trúc và ví dụ.</p><div class="topic-end"><span>${u.phrasal.length} cụm động từ</span><b>Vào học →</b></div></button><button class="topic blue word-topic" data-action="open-category" data-category="word"><span class="topic-icon">🔤</span><span class="chip navy">PART 3 · WORD FORMS</span><h2>03 · Word Forms</h2><p>Các họ Verb – Noun – Adjective – Adverb. Mỗi dạng có IPA, nghĩa và ví dụ.</p><div class="topic-end"><span>${u.word.length} dạng từ · ${u.families.length} họ từ</span><b>Vào học →</b></div></button>${g?`<button class="topic grammar-topic" data-action="open-grammar"><span class="topic-icon">✍️</span><span class="chip">PART 4 · GRAMMAR</span><h2>04 · Ngữ pháp</h2><p>Lý thuyết, cấu trúc và bài tập ngữ pháp trọng tâm Unit ${state.unit} từ tài liệu đã gửi.</p><div class="topic-end"><span>Ngữ pháp Unit ${state.unit}</span><b>Vào học →</b></div></button>`:''}</div><div class="note" style="margin-top:23px"><b>Cách học:</b> Chọn học phần → tích những từ muốn luyện → Flashcard, Ghép từ, Trắc nghiệm hoặc Chữ bay. Chữ bay tính điểm theo một lần chọn: đúng +10, sai 0 rồi chuyển câu.</div>`}
 function renderGrammar(){const u=bank();return `${baseHeader()}<div class="learning-top"><div><span class="chip">UNIT ${state.unit} · PART 4</span><h1 class="page-title">Ngữ pháp · ${esc(u.name)}</h1><p class="page-subtitle">Lý thuyết, cấu trúc và ví dụ theo tài liệu Unit ${state.unit}</p></div>${btn('← Chọn học phần','unit')}</div><article class="grammar-lesson card">${UNIT_GRAMMAR[state.unit]||'<p>Chưa có dữ liệu ngữ pháp.</p>'}</article>`}
-function renderLearn(){if(state.category==='irregular')return renderIrregularLearn();const u=bank(),t={vocab:['Core Vocabulary',`${u.vocab.length} từ/cụm từ · IPA (UK), từ loại, nghĩa và câu ví dụ`],phrasal:['Phrasal Verbs',`${u.phrasal.length} cụm động từ · IPA (UK), nghĩa, cấu trúc và ví dụ`],word:['Word Forms',`${u.families.length} họ từ · ${u.word.length} dạng từ · IPA cho từng dạng`] }[state.category];return `${baseHeader()}<div class="learning-top"><div><span class="chip">UNIT ${String(state.unit).padStart(2,'0')} · ${u.name.toUpperCase()}</span><h1 class="page-title">${t[0]}</h1><p class="page-subtitle">${t[1]}</p></div>${btn('← Chọn học phần','unit')}</div><div class="tabrow"><button class="tab ${state.tab==='bank'?'active':''}" data-action="tab" data-tab="bank">📚 Học từ vựng</button><button class="tab ${state.tab==='games'?'active':''}" data-action="tab" data-tab="games">🎮 Luyện tập qua game</button></div>${state.tab==='bank'?renderBank():renderGamesMenu()}`}
-
+function renderLearn(){
+ if(state.category==='irregular')return renderIrregularLearn();
+ const u=bank(),label={vocab:'Từ vựng',phrasal:'Phrasal Verbs',word:'Word Forms'}[state.category];
+ return `<div class="learning-compact-head"><span class="learning-identity"><b>Unit ${String(state.unit).padStart(2,'0')}</b><span class="learn-unit-name">${esc(u.name)}</span><span class="learn-section">${label}</span><span class="learn-total">${current().length} mục</span></span><span class="learning-right">${ukVoiceInfo()}${btn('← Học phần','unit','outline small')}</span></div><div class="tabrow"><button class="tab ${state.tab==='bank'?'active':''}" data-action="tab" data-tab="bank">📚 Học từ</button><button class="tab ${state.tab==='games'?'active':''}" data-action="tab" data-tab="games">🎮 Luyện qua game</button></div>${state.tab==='bank'?renderBank():`<div class="games-scroller">${renderGamesMenu()}</div>`}`;
+}
 function irregularLookupSearch(x,s){return [x.v1,x.v2,x.v3,x.vi,x.ipa,x.ipa2,x.ipa3].some(v=>v.toLocaleLowerCase('vi').includes(s))}
 function renderIrregularLearn(){return `${baseHeader()}<div class="iv-header"><div><span class="chip navy">HENRY ENGLISH · LỚP 9</span><h1 class="page-title">120 Irregular Verbs</h1><p class="page-subtitle">V1 – V2 – V3 · IPA Anh–Anh (UK) · Nghĩa tiếng Việt · Luyện tập 4 game</p></div>${btn('⌂ Trang chủ','home','outline')}</div><div class="tabrow"><button class="tab ${state.tab==='bank'?'active':''}" data-action="tab" data-tab="bank">📚 Bảng 120 động từ</button><button class="tab ${state.tab==='games'?'active':''}" data-action="tab" data-tab="games">🎮 Luyện qua game</button></div>${state.tab==='bank'?renderIrregularBank():renderGamesMenu()}`}
 function renderIrregularBank(){const s=state.search.trim().toLocaleLowerCase('vi'),sel=selected(),found=IRREGULAR_VERBS.filter(x=>irregularLookupSearch(x,s));
@@ -729,21 +1020,30 @@ function irregularSpeakWord(v,form){const word=form===1?v.v1:form===2?v.v2:v.v3;
 function renderIrregularGamesMenu(){return `<div class="selection-banner">✅ Đã chọn <b>${chosen().length}/120</b> động từ. Game chỉ sử dụng những động từ đã tích chọn, luyện cả V1, V2 và V3.</div><div class="mode-grid"><button class="mode" data-action="start-game" data-game="flash"><span class="emoji">🃏</span><h3>Flashcard</h3><p>Nhìn V1, lật thẻ để xem V2, V3, IPA và nghĩa.</p><span class="arrow">Bắt đầu →</span></button><button class="mode" data-action="start-game" data-game="match"><span class="emoji">🧩</span><h3>Ghép từ</h3><p>Ghép V1 với cặp V2 – V3 chính xác.</p><span class="arrow">Bắt đầu →</span></button><button class="mode" data-action="start-game" data-game="quiz"><span class="emoji">📝</span><h3>Trắc nghiệm</h3><p>Luyện nhận biết V1 ↔ V2 – V3 qua đáp án.</p><span class="arrow">Bắt đầu →</span></button><button class="mode" data-action="start-game" data-game="fly"><span class="emoji">🪁</span><h3>Chữ bay</h3><p>Nghe V1, tìm đúng cặp V2 – V3 đang bay. Đúng +10 điểm.</p><span class="arrow">Bắt đầu →</span></button></div><div class="note">Để chơi Chữ bay dễ nhìn, nên chọn khoảng <b>10–20 động từ</b> mỗi lượt. Giọng đọc IPA dựa trên giọng Anh–Anh có sẵn trên thiết bị.</div>${btn('← Quay lại bảng động từ','go-bank','outline')}`}
 
 function renderBank(){
- const u=bank(),s=state.search.trim().toLowerCase(),sel=selected();
- const termRow=x=>`<div class="term card"><input type="checkbox" class="tick" data-select-id="${x.id}" ${sel.has(x.id)?'checked':''} aria-label="Chọn ${esc(x.word)}"><div><div class="term-word">${esc(x.word)}</div><span class="ipa">${esc(x.ipa)}</span><span class="wordtype">${esc(x.pos)}</span></div><div class="meaning">${esc(x.vi)}${x.structure?`<small style="display:block;color:#ef711c">${esc(x.structure)}</small>`:''}</div><div class="example">${esc(x.example||'')}${state.unit===3?(()=>{const trans=state.category==='vocab'?VOCABULARY_3_VI[x.word]:state.category==='phrasal'?PHRASALS_3_VI[x.word]:'';return trans?`<span class="form-example">${esc(trans)}</span>`:''})():''}${x.exampleVi?`<span class="form-example">${esc(x.exampleVi)}</span>`:''}</div><button class="speaker" data-action="speak" data-id="${x.id}" aria-label="Nghe ${esc(x.word)}">🔊</button></div>`;
+ const u=bank(),s=state.search.trim().toLocaleLowerCase('vi'),sel=selected();
+ const exampleVN=x=>state.unit===3?(state.category==='vocab'?VOCABULARY_3_VI[x.word]||'':state.category==='phrasal'?PHRASALS_3_VI[x.word]||'':''):(x.exampleVi||'');
+ const termRow=x=>`<article class="term card"><input type="checkbox" class="tick" data-select-id="${x.id}" ${sel.has(x.id)?'checked':''} aria-label="Chọn ${esc(x.word)}"><div class="term-name"><strong class="term-word">${esc(x.word)}</strong><span class="ipa">${esc(x.ipa)}</span><span class="wordtype">${esc(x.pos)}</span></div><div class="meaning">${esc(x.vi)}</div><div class="example">${x.structure?`<span class="term-structure">${esc(x.structure)}</span>`:''}${x.example?`<span>${esc(x.example)}</span>`:''}${exampleVN(x)?`<span class="form-example">${esc(exampleVN(x))}</span>`:''}</div><button class="speaker" type="button" data-action="speak" data-id="${x.id}" aria-label="Nghe ${esc(x.word)}" title="Nghe phát âm British English">🔊</button></article>`;
  let listing='';
  if(state.category==='vocab'){
-  let groups=state.unit===2?['City Life & Urban Environment','Traffic & Transportation','Urban Problems']:state.unit===3?['Physical & Mental Health','Study & Time Management','Advice, Communication & Daily Habits']:state.unit===4?['Historical Places & Heritage','Traditions & Cultural Values','Life in the Past']:state.unit===5?['Experiences & Feelings','School & Group Activities','Travel & Outdoor Adventures']:state.unit>=6?[...new Set(u.vocab.map(x=>x.group))]:[null];
-  listing=`<div class="banks">${groups.map(g=>{const a=u.vocab.filter(x=>(!g||x.group===g)&&[x.word,x.vi,x.example,x.pos].some(v=>v.toLowerCase().includes(s)));return a.length?`${g?`<h2 class="bank-subhead">${esc(g)} <small>${a.length} từ/cụm từ</small></h2>`:''}${a.map(termRow).join('')}`:''}).join('')||'<div class="card no-result">Không tìm thấy từ vựng phù hợp.</div>'}</div>`;
+  const groups=state.unit===2?['City Life & Urban Environment','Traffic & Transportation','Urban Problems']:state.unit===3?['Physical & Mental Health','Study & Time Management','Advice, Communication & Daily Habits']:state.unit===4?['Historical Places & Heritage','Traditions & Cultural Values','Life in the Past']:state.unit===5?['Experiences & Feelings','School & Group Activities','Travel & Outdoor Adventures']:state.unit>=6?[...new Set(u.vocab.map(x=>x.group))]:[null];
+  listing=`<div class="banks">${groups.map(g=>{const a=u.vocab.filter(x=>(!g||x.group===g)&&[x.word,x.vi,x.example,x.pos].some(v=>String(v||'').toLocaleLowerCase('vi').includes(s)));return a.length?`${g?`<h2 class="bank-subhead">${esc(g)} <small>${a.length} từ</small></h2>`:''}${a.map(termRow).join('')}`:''}).join('')||'<div class="card no-result">Không tìm thấy từ phù hợp.</div>'}</div>`;
  }else if(state.category==='phrasal'){
-  const matching=u.phrasal.filter(x=>[x.word,x.vi,x.example,x.structure||''].some(v=>v.toLowerCase().includes(s)));
+  const matching=u.phrasal.filter(x=>[x.word,x.vi,x.example,x.structure||''].some(v=>String(v||'').toLocaleLowerCase('vi').includes(s)));
   const core=u.corePhrases.map(w=>matching.find(x=>x.word===w)).filter(Boolean);
   const extra=matching.filter(x=>!u.corePhrases.includes(x.word));
-  listing=`<div class="banks"><h2 class="bank-subhead">Core Phrasal Verbs <small>${u.corePhrases.length} cụm trọng tâm</small></h2>${core.map(termRow).join('')}${extra.length?`<h2 class="bank-subhead">Phrasal Verbs bổ sung <small>${extra.length} cụm bổ sung</small></h2>${extra.map(termRow).join('')}`:''}${matching.length?'':'<div class="card no-result">Không tìm thấy cụm động từ phù hợp.</div>'}</div>${state.unit===1?'<div class="note"><b>Cấu trúc khác cần nhớ:</b> remind somebody of something <span class="ipa">/rɪˈmaɪnd ˈsʌmbədi əv ˈsʌmθɪŋ/</span> – gợi ai nhớ đến điều gì. Ví dụ: This song reminds me of my hometown.</div>':state.unit===2?'<div class="note"><b>Ghi nhớ:</b> “carry out” và “cut down on” đã được học ở Unit 1 nên không xuất hiện lại ở Unit 2. Với <b>pick somebody up</b>, khi dùng đại từ: <b>pick me/him/her up</b>.</div>':state.unit===3?'<div class="note"><b>Đã lọc trùng Unit 1–2:</b> look after, deal with, put on, give up, cut down on. Chỉ giữ các phrasal verbs chưa học; ví dụ và cấu trúc được giữ đầy đủ.</div>':state.unit===4?'<div class="note"><b>Unit 4:</b> Đã bỏ cụm <i>set up</i> (đã có ở Unit 1). Các cụm còn lại được chia thành trọng tâm và mở rộng, có IPA, cấu trúc và ví dụ song ngữ.</div>':`<div class="note"><b>Unit ${state.unit}:</b> Đã lọc trùng với các Unit trước. Nhấn biểu tượng 🔊 để nghe phát âm và tích chọn các cụm muốn luyện tập.</div>`}`;
+  listing=`<div class="banks">${core.length?`<h2 class="bank-subhead">Trọng tâm <small>${core.length} cụm</small></h2>${core.map(termRow).join('')}`:''}${extra.length?`<h2 class="bank-subhead">Bổ sung <small>${extra.length} cụm</small></h2>${extra.map(termRow).join('')}`:''}${matching.length?'':'<div class="card no-result">Không tìm thấy cụm động từ.</div>'}</div>${state.unit===1?'<div class="note"><b>Lưu ý:</b> remind somebody of something – gợi ai nhớ điều gì. Ví dụ: This song reminds me of my hometown.</div>':state.unit===2?'<div class="note"><b>Lưu ý:</b> pick somebody up → pick me/him/her up.</div>':''}`;
  }else{
-  listing=`<div>${u.families.filter(f=>f.root.includes(s)||f.meaning.toLowerCase().includes(s)||f.ids.some(id=>{let x=u.word.find(w=>w.id===id);return x.word.toLowerCase().includes(s)||x.vi.toLowerCase().includes(s)})).map(f=>`<article class="family card"><div class="family-head"><div class="family-title">${esc(f.root)} <small>· ${esc(f.meaning)}</small></div><button class="btn small outline" data-action="toggle-family" data-family="${esc(f.root)}">${f.ids.every(id=>sel.has(id))?'Bỏ chọn nhóm':'Chọn nhóm'}</button></div><div class="family-grid">${POS_KEYS.map(pos=>`<div class="family-col"><h4>${POS_NAME[pos]}</h4>${f.forms[pos].length?f.forms[pos].map(form=>{const entry=u.word.find(w=>w.family===f.root&&w.posKey===pos&&w.word===form[0]);return `<div class="word-entry"><input class="tick" type="checkbox" data-select-id="${entry.id}" ${sel.has(entry.id)?'checked':''} aria-label="Chọn ${esc(entry.word)}"><div><strong>${esc(entry.word)}</strong><span class="ipa">${esc(entry.ipa)}</span><span class="vn">${esc(entry.vi)}</span>${state.unit>=2?`<span class="form-example">${esc(entry.example)}${entry.exampleVi?`<span class="form-example" style="margin-top:2px">${esc(entry.exampleVi)}</span>`:''}</span>`:''}</div><button class="speaker" data-action="speak" data-id="${entry.id}" aria-label="Nghe ${esc(entry.word)}">🔊</button></div>`}).join(''):'<span class="empty-dash">— Không có dạng thông dụng</span>'}</div>`).join('')}</div><div class="family-bottom"><b>Ví dụ:</b> ${esc(f.example)}${f.note?`<div style="color:#c5661d;margin-top:6px"><b>⚠ Lưu ý:</b> ${esc(f.note)}</div>`:''}</div></article>`).join('')||'<div class="card no-result">Không tìm thấy họ từ phù hợp.</div>'}</div>`;
+  const families=u.families.filter(f=>f.root.toLocaleLowerCase('vi').includes(s)||f.meaning.toLocaleLowerCase('vi').includes(s)||f.ids.some(id=>{const x=u.word.find(w=>w.id===id);return x&&[x.word,x.vi].some(v=>String(v||'').toLocaleLowerCase('vi').includes(s))}));
+  listing=`<div class="wf-list">${families.map(f=>{
+   const groups=POS_KEYS.map(pos=>{
+    const entries=f.forms[pos].map(form=>u.word.find(w=>w.family===f.root&&w.posKey===pos&&w.word===form[0])).filter(Boolean);
+    if(!entries.length)return '';
+    return `<div class="wf-posgroup"><span class="wf-pos-label">${{v:'V · Động từ',n:'N · Danh từ',adj:'ADJ · Tính từ',adv:'ADV · Trạng từ'}[pos]}</span>${entries.map(e=>`<div class="wf-entry"><input class="tick" type="checkbox" data-select-id="${e.id}" ${sel.has(e.id)?'checked':''} aria-label="Chọn ${esc(e.word)}"><div class="wf-lexeme"><strong>${esc(e.word)}</strong><span class="ipa">${esc(e.ipa)}</span><span class="wf-vi">${esc(e.vi)}</span>${e.example?`<span class="wf-examples">${esc(e.example)}${e.exampleVi?`<span>${esc(e.exampleVi)}</span>`:''}</span>`:''}</div><button class="speaker" type="button" data-action="speak" data-id="${e.id}" aria-label="Nghe ${esc(e.word)}" title="Nghe phát âm British English">🔊</button></div>`).join('')}</div>`;
+   }).filter(Boolean).join('');
+   return `<article class="wf-family card"><div class="wf-head"><div class="wf-root"><strong>${esc(f.root)}</strong><span>${esc(f.meaning)}</span></div><button class="wf-group-btn" type="button" data-action="toggle-family" data-family="${esc(f.root)}">${f.ids.every(id=>sel.has(id))?'Bỏ chọn':'Chọn nhóm'}</button></div><div class="wf-forms">${groups}</div><div class="wf-details">${f.example?`<div><b>Ví dụ:</b> ${esc(f.example)}</div>`:''}${f.note?`<div class="wf-warning"><b>Lưu ý:</b> ${esc(f.note)}</div>`:''}</div></article>`;
+  }).join('')||'<div class="card no-result">Không tìm thấy họ từ phù hợp.</div>'}</div>`;
  }
- return `<div class="toolbar"><input class="search" aria-label="Tìm kiếm từ vựng" id="termSearch" placeholder="🔎 Tìm từ tiếng Anh / nghĩa tiếng Việt..." value="${esc(state.search)}"><button class="btn small outline" data-action="select-all">✓ Chọn tất cả</button><button class="btn small ghost" data-action="select-none">Bỏ chọn</button><span class="count">Đã chọn: ${sel.size}/${current().length}</span></div>${listing}<div class="section-head"><div><h2>Luyện tập với từ đã chọn</h2><p>Chỉ những từ đã đánh dấu mới xuất hiện trong trò chơi.</p></div>${btn('🎮 Chọn trò chơi →','go-games','orange')}</div>`;
+ return `<div class="toolbar learn-toolbar"><input class="search" aria-label="Tìm kiếm từ" id="termSearch" placeholder="🔎 Tìm từ hoặc nghĩa..." value="${esc(state.search)}"><button class="btn small outline example-toggle ${state.showBankExamples?'active':''}" type="button" data-action="toggle-examples" aria-pressed="${state.showBankExamples}" title="Ẩn hoặc hiện câu ví dụ / cấu trúc">${state.showBankExamples?'Ẩn ví dụ':'Xem ví dụ'}</button><button class="btn small outline" data-action="select-all">✓ Chọn hết</button><button class="btn small ghost" data-action="select-none">Bỏ chọn</button><span class="count" aria-live="polite">${sel.size}/${current().length}</span><button class="btn small orange learn-play" data-action="go-games">🎮 Luyện game</button></div><div class="bank-scroller ${state.showBankExamples?'show-examples':''}" role="region" aria-label="Danh sách từ vựng">${listing}</div>`;
 }
 function renderGamesMenu(){if(state.category==='irregular')return renderIrregularGamesMenu();return `<div class="selection-banner">✅ Đã chọn <b>${chosen().length}/${current().length}</b> mục từ. Muốn đổi bộ từ luyện tập, quay lại tab “Học từ vựng” để tích chọn.</div><div class="mode-grid"><button class="mode" data-action="start-game" data-game="flash"><span class="emoji">🃏</span><h3>Flashcard</h3><p>Lật thẻ Anh–Việt, nghe phát âm mỗi lần đổi mặt.</p><span class="arrow">Bắt đầu →</span></button><button class="mode" data-action="start-game" data-game="match"><span class="emoji">🧩</span><h3>Ghép từ</h3><p>Ghép tiếng Anh với nghĩa tiếng Việt, 6 cặp/lượt.</p><span class="arrow">Bắt đầu →</span></button><button class="mode" data-action="start-game" data-game="quiz"><span class="emoji">📝</span><h3>Trắc nghiệm</h3><p>Chọn đáp án đúng qua các lựa chọn Anh–Việt.</p><span class="arrow">Bắt đầu →</span></button><button class="mode" data-action="start-game" data-game="fly"><span class="emoji">🪁</span><h3>Chữ bay thật</h3><p>Tất cả từ đã chọn bay tự do trong khung lớn. Nghe ×3, chọn 1 lần để tính điểm: đúng +10, sai 0, sau đó tự chuyển từ tiếp theo.</p><span class="arrow">Bắt đầu →</span></button></div><div class="note"><b>Chữ bay:</b> Toàn bộ các từ đã chọn xuất hiện cùng lúc. Mỗi từ được đọc chỉ có một lần chọn để ghi điểm. Để dễ nhìn trên điện thoại, có thể chọn 10–20 từ mỗi lượt. Giọng đọc phụ thuộc giọng tiếng Anh có sẵn trên thiết bị.</div>${btn('← Chọn từ luyện tập','go-bank','outline')}`}
 const gameName=g=>({flash:'Flashcard',match:'Ghép từ',quiz:'Trắc nghiệm',fly:'Chữ bay'})[g]||g;
@@ -762,7 +1062,18 @@ function renderMatch(){if(state.category==='irregular')return renderIrregularMat
 function makeQuizOptions(q){if(state.category==='irregular'){const target=q.queue[q.pos],reverse=q.pos%2===1,label=e=>reverse?e.v1:e.v2+' → '+e.v3;let pool=shuffle(current().filter(x=>x.id!==target.id&&label(x)!==label(target))),used=new Set([label(target)]),opts=[target];for(const x of pool){if(!used.has(label(x))){used.add(label(x));opts.push(x)}if(opts.length>=4)break}return shuffle(opts)}const target=q.queue[q.pos];const reverse=q.pos%2===1;const label=e=>reverse?e.word:e.vi+(state.category==='word'?' · '+e.pos:'');let pool=shuffle(current().filter(x=>x.id!==target.id&&label(x)!==label(target)));let used=new Set([label(target)]);let opts=[target];for(const x of pool){if(!used.has(label(x))){used.add(label(x));opts.push(x)}if(opts.length>=4)break}return shuffle(opts)}
 function renderQuiz(){if(state.category==='irregular')return renderIrregularQuiz();const q=state.quiz;if(q.pos>=q.queue.length)return finishView('Trắc nghiệm',q.correct,q.queue.length);const e=q.queue[q.pos];const reverse=q.pos%2===1;const label=x=>reverse?x.word:x.vi+(state.category==='word'?' · '+x.pos:'');return gameFrame('📝 Trắc nghiệm',`Câu ${q.pos+1}/${q.queue.length} · Đúng ${q.correct} câu`, `<div class="question">${reverse?'Chọn từ tiếng Anh có nghĩa':'Chọn nghĩa tiếng Việt của từ'}</div><div class="quiz-prompt">${esc(reverse?e.vi+(state.category==='word'?' · '+e.pos:''):e.word+(state.category==='word'?' · '+e.pos:''))}</div><div class="quiz-ipa">${reverse?esc(e.pos):esc(e.ipa)} ${!reverse?`<button class="speaker" data-action="quiz-speak" aria-label="Nghe câu hỏi">🔊</button>`:''}</div><div class="choices">${q.options.map((x,i)=>`<button class="choice ${q.answered?(x.id===e.id?'right':q.choice===x.id?'wrong':''):''}" data-action="quiz-answer" data-id="${x.id}" ${q.answered?'disabled':''}><span class="letter">${'ABCD'[i]}</span>${esc(label(x))}</button>`).join('')}</div>${q.answered?`<div class="feedback ${q.choice===e.id?'':'bad'}">${q.choice===e.id?'✔ Chính xác!':'✖ Chưa chính xác.'} Đáp án: <b>${esc(e.word)}</b> <span class="ipa">${esc(e.ipa)}</span> — ${esc(e.vi)}${e.example?`<div style="margin-top:5px;font-size:12px">${esc(e.example)}</div>`:''}</div><div class="under-card" style="justify-content:flex-end">${btn('Câu tiếp theo →','quiz-next','orange')}</div>`:''}`,q.pos,q.queue.length)}
 function renderFly(){if(state.category==='irregular')return renderIrregularFly();const f=state.flying;if(f.pos>=f.queue.length)return finishView('Chữ bay',f.correct,f.queue.length);return gameFrame('🪁 Chữ bay – Nghe & bắt từ',`Tất cả ${f.queue.length} chữ đang bay · mỗi câu chỉ có 1 lượt chọn để ghi điểm`, `<div class="fly-dashboard"><div><span class="fly-kicker">🔊 NGHE TỪ CẦN TÌM (3 LẦN)</span><div id="flyGuide" class="fly-guide" aria-live="polite">Lắng nghe và chọn đúng ngay từ lần đầu!</div></div><div class="fly-stat"><b id="flyScore">${f.score}</b><small>ĐIỂM</small></div><div class="fly-stat"><b id="flyCorrect">${f.correct}</b><small>ĐÚNG</small></div><div class="fly-stat"><b id="flyRemaining">${f.queue.length-f.pos}</b><small>CÒN LẠI</small></div></div><div class="fly-actions"><button class="btn orange" data-action="fly-speak">🔊 Nghe lại 3 lần</button><button class="btn outline" data-action="fly-skip">Bỏ qua từ này →</button><button class="btn ghost" data-action="fly-pause" id="flyPause">⏸ Tạm dừng chữ bay</button></div><div id="flyingArena" class="flying-arena swarm" aria-label="Các từ đang bay, hãy tìm từ nghe được">${f.queue.map((e,i)=>`<button type="button" class="fly-word swarm-word" data-action="fly-answer" data-id="${e.id}" style="--tone:${i%5}" aria-label="Chọn ${esc(e.word)}">${esc(e.word)}</button>`).join('')}</div><div class="fly-help">Chữ bay liên tục trong một khung lớn. <b>Mỗi từ chỉ được chọn một lần: đúng +10 điểm, sai 0 điểm; tự chuyển câu tiếp theo.</b></div><div class="under-card"><span id="flyCounter" class="count">Đã làm ${f.pos}/${f.queue.length} từ · Sai ${f.wrong}</span><span class="count">⭐ <span id="flyBottomScore">${f.score}</span> điểm</span></div>`,f.pos,f.queue.length)}
-function render(){stopFlyMotion();app.innerHTML=state.page==='semester'?renderSemesterHome():state.page==='semExam'?renderSemExam():state.page==='home'?renderHome():state.page==='unit'?renderUnit():state.page==='grammar'?renderGrammar():state.page==='learn'?renderLearn():renderGame();document.querySelector('#soundBtn').textContent=state.sound?'🔊':'🔇';document.querySelector('#soundBtn').title='Hiệu ứng nút (không tắt phát âm từ vựng)';if(state.page==='game'&&state.game==='fly'&&state.flying&&state.flying.pos<state.flying.queue.length)requestAnimationFrame(()=>{if(state.page==='game'&&state.game==='fly')startFlyMotion()})}
+let renderedViewKey='';
+function render(){
+ stopFlyMotion();
+ const viewKey=[state.page,state.unit,state.category,state.tab].join(':');
+ const prevScroll=viewKey===renderedViewKey?document.querySelector('.bank-scroller')?.scrollTop||0:0;
+ document.body.dataset.page=state.page;
+ document.body.dataset.category=state.category;
+ document.body.dataset.tab=state.tab;
+ app.innerHTML=state.page==='semester'?renderSemesterHome():state.page==='semExam'?renderSemExam():state.page==='home'?renderHome():state.page==='unit'?renderUnit():state.page==='grammar'?renderGrammar():state.page==='learn'?renderLearn():renderGame();renderedViewKey=viewKey;
+ const listScroll=app.querySelector('.bank-scroller');if(listScroll)listScroll.scrollTop=prevScroll;
+ updateUKVoiceInfo();
+ document.querySelector('#soundBtn').textContent=state.sound?'🔊':'🔇';document.querySelector('#soundBtn').title='Hiệu ứng nút (không tắt phát âm từ vựng)';if(state.page==='game'&&state.game==='fly'&&state.flying&&state.flying.pos<state.flying.queue.length)requestAnimationFrame(()=>{if(state.page==='game'&&state.game==='fly')startFlyMotion()})}
 function openCategory(cat){state.category=cat;state.page='learn';state.tab='bank';state.search='';cancelSpeech();render();scrollUp()}
 function switchTab(tab){state.tab=tab;state.search='';render();scrollUp()}
 function startGame(game){let pool=chosen();if(!pool.length){alert('Hãy chọn ít nhất 1 từ ở phần Học từ vựng.');state.tab='bank';render();return}if(game==='match'&&pool.length<2){alert('Ghép từ cần chọn ít nhất 2 mục từ.');return}state.page='game';state.game=game;cancelSpeech();if(game==='flash')state.flash={queue:shuffle(pool),pos:0,flipped:false};if(game==='match'){state.match={queue:shuffle(pool),offset:0,correct:0,group:[],cards:[],picked:[],done:new Set(),wrong:false,lock:false};setupMatch()}if(game==='quiz'){state.quiz={queue:shuffle(pool),pos:0,correct:0,choice:null,answered:false,options:[]};state.quiz.options=makeQuizOptions(state.quiz)}if(game==='fly'){const unique=new Map();for(const x of pool){if(!unique.has(x.word.toLowerCase()))unique.set(x.word.toLowerCase(),x)}let queue=shuffle([...unique.values()]);state.flying={queue,pos:0,correct:0,score:0,wrong:0,skipped:0,lock:false,paused:false}}render();scrollUp();if(game==='flash')speak(state.flash.queue[0].word);if(game==='fly')speak(state.flying.queue[0].word,3)}
@@ -779,7 +1090,7 @@ function clickHandler(e){let b=e.target.closest('button[data-action]');if(!b||!a
  case'sem-answer':{if(semSubmitted())return;let q=Number(b.dataset.q),c=b.dataset.choice;semRecord()[q]=c;semPersist();const y=window.scrollY;render();window.scrollTo(0,y);return}
  case'sem-finish':{if(semSubmitted())return;const st=semAutoStats(semState.id),blank=69-st.attempted-st.written;const msg=blank>0?`Bạn còn ${blank} câu chưa trả lời (gồm ${st.remaining} câu chấm tự động và ${7-st.written} câu tự luận).\n\nBạn vẫn muốn NỘP BÀI và xem điểm/đáp án không?`:'Bạn chắc chắn muốn NỘP BÀI? Sau khi nộp, không thể sửa câu trả lời; hệ thống sẽ công bố điểm và đáp án.';if(!confirm(msg))return;semRecord().__submittedAt=new Date().toISOString();semPersist();semState.part=0;render();scrollUp();return}
  case'sem-reset':{if(!confirm('Xóa toàn bộ câu trả lời và kết quả đã nộp của đề này để làm lại từ đầu?'))return;semSave[String(semState.id)]={};semPersist();semNavigate(0);return}
- case'home':topHome();return;case'open-irregular':state.category='irregular';state.page='learn';state.tab='bank';state.search='';cancelSpeech();render();scrollUp();return;case'irregular-select-filtered':{const s=state.search.trim().toLocaleLowerCase('vi');IRREGULAR_VERBS.filter(x=>irregularLookupSearch(x,s)).forEach(x=>selected().add(x.id));save();render();return}case'irregular-speak':{const v=IRREGULAR_BY_ID.get(b.dataset.id);if(v)speak(irregularSpeakWord(v,Number(b.dataset.form)));return}case'select-unit':state.unit=Number(b.dataset.unit);state.category='vocab';state.tab='bank';state.page='unit';cancelSpeech();render();scrollUp();return;case'unit':cancelSpeech();state.page='unit';render();scrollUp();return;case'open-category':openCategory(b.dataset.category);return;case'open-grammar':state.page='grammar';cancelSpeech();render();scrollUp();return;case'learn':cancelSpeech();state.page='learn';state.tab='bank';render();scrollUp();return;case'tab':switchTab(b.dataset.tab);return;case'go-games':switchTab('games');return;case'go-bank':switchTab('bank');return;case'select-all':current().forEach(x=>selected().add(x.id));save();render();return;case'select-none':selected().clear();save();render();return;case'toggle-family':{let fam=families().find(f=>f.root===b.dataset.family);let set=selected();let all=fam.ids.every(id=>set.has(id));fam.ids.forEach(id=>all?set.delete(id):set.add(id));save();render();return}case'speak':speak(lookup(b.dataset.id).word);return;case'start-game':startGame(b.dataset.game);return;case'exit-game':goFromGame();return;case'replay':startGame(state.game);return;case'flip':state.flash.flipped=!state.flash.flipped;render();if(state.category==='irregular'){let x=state.flash.queue[state.flash.pos];speak(irregularSpeakWord(x,state.flash.flipped?2:1))}else speak(state.flash.queue[state.flash.pos].word);return;case'flash-next':state.flash.pos++;state.flash.flipped=false;render();if(state.flash.pos<state.flash.queue.length)speak(state.flash.queue[state.flash.pos].word);return;case'flash-prev':state.flash.pos=Math.max(0,state.flash.pos-1);state.flash.flipped=false;render();speak(state.flash.queue[state.flash.pos].word);return;case'flash-speak':{const x=state.flash.queue[state.flash.pos];speak(state.category==='irregular'?irregularSpeakWord(x,state.flash.flipped?2:1):x.word);return}case'match-card':matchPick(b.dataset.side,b.dataset.id);return;case'match-shuffle':{let m=state.match;m.cards=shuffle(m.cards);render();return}case'match-next':{let m=state.match;if(m.done.size!==m.group.length)return;m.offset+=6;if(m.offset<m.queue.length)setupMatch();render();return}case'quiz-answer':quizAnswer(b.dataset.id);return;case'quiz-speak':{const x=state.quiz.queue[state.quiz.pos];speak(state.category==='irregular'?irregularSpeakWord(x,state.quiz.pos%2===1?2:1):x.word);return}case'quiz-next':{let q=state.quiz;if(!q.answered)return;q.pos++;q.answered=false;q.choice=null;if(q.pos<q.queue.length)q.options=makeQuizOptions(q);render();return}case'fly-speak':if(!state.flying.lock)speak(state.flying.queue[state.flying.pos].word,3);return;case'fly-answer':flyAnswer(b.dataset.id);return;case'fly-skip':if(!state.flying.lock){state.flying.skipped++;nextFly(false)}return;case'fly-pause':toggleFlyMotion();return;}}
+ case'home':topHome();return;case'open-irregular':state.category='irregular';state.page='learn';state.tab='bank';state.search='';cancelSpeech();render();scrollUp();return;case'irregular-select-filtered':{const s=state.search.trim().toLocaleLowerCase('vi');IRREGULAR_VERBS.filter(x=>irregularLookupSearch(x,s)).forEach(x=>selected().add(x.id));save();render();return}case'irregular-speak':{const v=IRREGULAR_BY_ID.get(b.dataset.id);if(v)speak(irregularSpeakWord(v,Number(b.dataset.form)));return}case'select-unit':state.unit=Number(b.dataset.unit);state.category='vocab';state.tab='bank';state.page='unit';cancelSpeech();render();scrollUp();return;case'unit':cancelSpeech();state.page='unit';render();scrollUp();return;case'open-category':openCategory(b.dataset.category);return;case'open-grammar':state.page='grammar';cancelSpeech();render();scrollUp();return;case'learn':cancelSpeech();state.page='learn';state.tab='bank';render();scrollUp();return;case'tab':switchTab(b.dataset.tab);return;case'go-games':switchTab('games');return;case'go-bank':switchTab('bank');return;case'toggle-examples':state.showBankExamples=!state.showBankExamples;render();return;case'select-all':current().forEach(x=>selected().add(x.id));save();render();return;case'select-none':selected().clear();save();render();return;case'toggle-family':{let fam=families().find(f=>f.root===b.dataset.family);let set=selected();let all=fam.ids.every(id=>set.has(id));fam.ids.forEach(id=>all?set.delete(id):set.add(id));save();render();return}case'speak':speak(lookup(b.dataset.id).word);return;case'start-game':startGame(b.dataset.game);return;case'exit-game':goFromGame();return;case'replay':startGame(state.game);return;case'flip':state.flash.flipped=!state.flash.flipped;render();if(state.category==='irregular'){let x=state.flash.queue[state.flash.pos];speak(irregularSpeakWord(x,state.flash.flipped?2:1))}else speak(state.flash.queue[state.flash.pos].word);return;case'flash-next':state.flash.pos++;state.flash.flipped=false;render();if(state.flash.pos<state.flash.queue.length)speak(state.flash.queue[state.flash.pos].word);return;case'flash-prev':state.flash.pos=Math.max(0,state.flash.pos-1);state.flash.flipped=false;render();speak(state.flash.queue[state.flash.pos].word);return;case'flash-speak':{const x=state.flash.queue[state.flash.pos];speak(state.category==='irregular'?irregularSpeakWord(x,state.flash.flipped?2:1):x.word);return}case'match-card':matchPick(b.dataset.side,b.dataset.id);return;case'match-shuffle':{let m=state.match;m.cards=shuffle(m.cards);render();return}case'match-next':{let m=state.match;if(m.done.size!==m.group.length)return;m.offset+=6;if(m.offset<m.queue.length)setupMatch();render();return}case'quiz-answer':quizAnswer(b.dataset.id);return;case'quiz-speak':{const x=state.quiz.queue[state.quiz.pos];speak(state.category==='irregular'?irregularSpeakWord(x,state.quiz.pos%2===1?2:1):x.word);return}case'quiz-next':{let q=state.quiz;if(!q.answered)return;q.pos++;q.answered=false;q.choice=null;if(q.pos<q.queue.length)q.options=makeQuizOptions(q);render();return}case'fly-speak':if(!state.flying.lock)speak(state.flying.queue[state.flying.pos].word,3);return;case'fly-answer':flyAnswer(b.dataset.id);return;case'fly-skip':if(!state.flying.lock){state.flying.skipped++;nextFly(false)}return;case'fly-pause':toggleFlyMotion();return;}}
 function matchPick(side,id){const m=state.match;if(m.lock||m.done.has(id))return;const prev=m.picked[0];if(prev&&prev.side===side){m.picked=[{side,id}];render();return}m.picked.push({side,id});if(m.picked.length===2){m.lock=true;let correct=m.picked[0].id===m.picked[1].id;if(correct){m.done.add(id);m.correct++;tickSound('good');speak(lookup(id).word)}else{m.wrong=true;tickSound('bad')}render();setTimeout(()=>{if(state.game!=='match'||state.match!==m)return;m.picked=[];m.wrong=false;m.lock=false;render()},correct?430:650)}else render()}
 function quizAnswer(id){let q=state.quiz;if(q.answered)return;let e=q.queue[q.pos];q.choice=id;q.answered=true;if(id===e.id){q.correct++;tickSound('good')}else tickSound('bad');render();speak(e.word)}
 function flyAnswer(id){
@@ -870,7 +1181,7 @@ function updateFlyHud(){const f=state.flying;if(!f)return;const fields={flyScore
 
 app.addEventListener('click',clickHandler);
 app.addEventListener('change',e=>{let id=e.target.dataset.selectId;if(!id)return;let set=selected();if(e.target.checked)set.add(id);else set.delete(id);save();let prevScroll=window.scrollY;render();window.scrollTo(0,prevScroll)});
-app.addEventListener('input',e=>{if(e.target.dataset.semWrite){if(semSubmitted())return;semRecord()[Number(e.target.dataset.semWrite)]=e.target.value;semPersist();return;}if(e.target.id==='termSearch'){let p=e.target.selectionStart;state.search=e.target.value;let prevScroll=window.scrollY;render();let next=document.querySelector('#termSearch');next?.focus();next?.setSelectionRange(p,p);window.scrollTo(0,prevScroll)}});
+app.addEventListener('input',e=>{if(e.target.dataset.semWrite){if(semSubmitted())return;semRecord()[Number(e.target.dataset.semWrite)]=e.target.value;semPersist();return;}if(e.target.id==='termSearch'){let p=e.target.selectionStart;state.search=e.target.value;let prevScroll=window.scrollY;render();let next=document.querySelector('#termSearch');next?.focus();next?.setSelectionRange(p,p);let bankList=document.querySelector('.bank-scroller');if(bankList)bankList.scrollTop=0;window.scrollTo(0,prevScroll)}});
 document.querySelector('#irregularBtn').addEventListener('click',()=>{tickSound();state.category='irregular';state.page='learn';state.tab='bank';state.search='';cancelSpeech();render();scrollUp()});
 document.querySelector('#homeBtn').addEventListener('click',()=>{tickSound();topHome()});document.querySelector('#semesterBtn').addEventListener('click',()=>{tickSound();cancelSpeech();state.page='semester';render();scrollUp()});document.querySelector('#soundBtn').addEventListener('click',()=>{state.sound=!state.sound;tickSound();render()});
 window.addEventListener('pagehide',cancelSpeech);
